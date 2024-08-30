@@ -1,0 +1,2609 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_fc1eda446452a20a9dc77060d7de5b18 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+<h1 style="text-align:center; font-family:Arial; font-size:24px;">NYCSBUS Shuttle Map Fall 2024</h1>
+<h3 style="text-align:center; font-family:Arial; font-size:16px;">Please use the selector on the top right to view specific shuttle routes.</h3>
+    
+            <div class="folium-map" id="map_fc1eda446452a20a9dc77060d7de5b18" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_fc1eda446452a20a9dc77060d7de5b18 = L.map(
+                "map_fc1eda446452a20a9dc77060d7de5b18",
+                {
+                    center: [40.7128, -74.006],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 11,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_bf6726b4e4c56aff6d009de95c84e44c = L.tileLayer(
+                "https://api.mapbox.com/styles/v1/vr00n-nycsbus/clyyoiorc00uu01pe8ttggvhd/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoidnIwMG4tbnljc2J1cyIsImEiOiJjbDB5cHhoeHgxcmEyM2ptdXVkczk1M2xlIn0.qq6o-6TMurwke-t1eyetBw",
+                {"attribution": "Mapbox", "detectRetina": false, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_bf6726b4e4c56aff6d009de95c84e44c.addTo(map_fc1eda446452a20a9dc77060d7de5b18);
+        
+    
+            var marker_b71e4f8794ff49bb90e5d333360e52a6 = L.marker(
+                [40.88652350816678, -73.83000879676077],
+                {}
+            ).addTo(map_fc1eda446452a20a9dc77060d7de5b18);
+        
+    
+            var icon_420e788f33b836b51f2098202472637b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "lightgray", "prefix": "fa"}
+            );
+            marker_b71e4f8794ff49bb90e5d333360e52a6.setIcon(icon_420e788f33b836b51f2098202472637b);
+        
+    
+        var popup_b97aa39f8bc285af7b2ad08425941a5b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_8221c5d6e9b2504100b6d3757319c9aa = $(`<div id="html_8221c5d6e9b2504100b6d3757319c9aa" style="width: 100.0%; height: 100.0%;">Depot: Conners</div>`)[0];
+                popup_b97aa39f8bc285af7b2ad08425941a5b.setContent(html_8221c5d6e9b2504100b6d3757319c9aa);
+            
+        
+
+        marker_b71e4f8794ff49bb90e5d333360e52a6.bindPopup(popup_b97aa39f8bc285af7b2ad08425941a5b)
+        ;
+
+        
+    
+    
+            var marker_2efa4bbe3b79fe6036651bfe368d3866 = L.marker(
+                [40.70245387884107, -73.77734902381144],
+                {}
+            ).addTo(map_fc1eda446452a20a9dc77060d7de5b18);
+        
+    
+            var icon_c5d6f4b3231b88655ad2ee7976c8e7ef = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "lightgray", "prefix": "fa"}
+            );
+            marker_2efa4bbe3b79fe6036651bfe368d3866.setIcon(icon_c5d6f4b3231b88655ad2ee7976c8e7ef);
+        
+    
+        var popup_139ee9b5157a22eca7cd26f7cfe02824 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_eb5fd4f045735e5d8beb0e036927714e = $(`<div id="html_eb5fd4f045735e5d8beb0e036927714e" style="width: 100.0%; height: 100.0%;">Depot: Jamaica</div>`)[0];
+                popup_139ee9b5157a22eca7cd26f7cfe02824.setContent(html_eb5fd4f045735e5d8beb0e036927714e);
+            
+        
+
+        marker_2efa4bbe3b79fe6036651bfe368d3866.bindPopup(popup_139ee9b5157a22eca7cd26f7cfe02824)
+        ;
+
+        
+    
+    
+            var marker_fc1fe6a3f7bfe974068691734b369f44 = L.marker(
+                [40.63915256347144, -74.1288546765727],
+                {}
+            ).addTo(map_fc1eda446452a20a9dc77060d7de5b18);
+        
+    
+            var icon_a70f48736ed20fc9a028534aea3f2da6 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "lightgray", "prefix": "fa"}
+            );
+            marker_fc1fe6a3f7bfe974068691734b369f44.setIcon(icon_a70f48736ed20fc9a028534aea3f2da6);
+        
+    
+        var popup_f57dd806b915d55a6b42b09136c4b5a5 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_e791ffb7277439741d92db913fe88614 = $(`<div id="html_e791ffb7277439741d92db913fe88614" style="width: 100.0%; height: 100.0%;">Depot: Richmond Terrace</div>`)[0];
+                popup_f57dd806b915d55a6b42b09136c4b5a5.setContent(html_e791ffb7277439741d92db913fe88614);
+            
+        
+
+        marker_fc1fe6a3f7bfe974068691734b369f44.bindPopup(popup_f57dd806b915d55a6b42b09136c4b5a5)
+        ;
+
+        
+    
+    
+            var marker_3c58f439d50dd49abb9a7f4e062c84ce = L.marker(
+                [40.72896307317551, -73.94068983423975],
+                {}
+            ).addTo(map_fc1eda446452a20a9dc77060d7de5b18);
+        
+    
+            var icon_b28810284bb3449a00b2648a567ee9ac = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "lightgray", "prefix": "fa"}
+            );
+            marker_3c58f439d50dd49abb9a7f4e062c84ce.setIcon(icon_b28810284bb3449a00b2648a567ee9ac);
+        
+    
+        var popup_751c0423c4b24d9c59f38b3e2a5e53b9 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_6102a3ebce8c5336b7368298795593bd = $(`<div id="html_6102a3ebce8c5336b7368298795593bd" style="width: 100.0%; height: 100.0%;">Depot: Greenpoint</div>`)[0];
+                popup_751c0423c4b24d9c59f38b3e2a5e53b9.setContent(html_6102a3ebce8c5336b7368298795593bd);
+            
+        
+
+        marker_3c58f439d50dd49abb9a7f4e062c84ce.bindPopup(popup_751c0423c4b24d9c59f38b3e2a5e53b9)
+        ;
+
+        
+    
+    
+            var feature_group_6fdcbaa3c086ac5782e2081294781afa = L.featureGroup(
+                {}
+            );
+        
+    
+            var poly_line_97d4a48537f53b91896da66def0eb72a = L.polyline(
+                [[40.831521470722386, -73.84535837286077], [40.88652350816678, -73.83000879676077]],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(feature_group_6fdcbaa3c086ac5782e2081294781afa);
+        
+    
+            poly_line_97d4a48537f53b91896da66def0eb72a.bindTooltip(
+                `<div>
+                     BX1
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_08cb8c0c8a050558f9805eb5ea9d7b20 = L.marker(
+                [40.831521470722386, -73.84535837286077],
+                {}
+            ).addTo(feature_group_6fdcbaa3c086ac5782e2081294781afa);
+        
+    
+            var icon_93dcebbeb4e724f2d985502005032d20 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_08cb8c0c8a050558f9805eb5ea9d7b20.setIcon(icon_93dcebbeb4e724f2d985502005032d20);
+        
+    
+        var popup_b3bca1a813e70c95f64caac318601ad7 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_00965582a13cba40256497ceab65c9d2 = $(`<div id="html_00965582a13cba40256497ceab65c9d2" style="width: 100.0%; height: 100.0%;">Shuttle: BX1<br>Stop: 1101 Zerega (Depot)</div>`)[0];
+                popup_b3bca1a813e70c95f64caac318601ad7.setContent(html_00965582a13cba40256497ceab65c9d2);
+            
+        
+
+        marker_08cb8c0c8a050558f9805eb5ea9d7b20.bindPopup(popup_b3bca1a813e70c95f64caac318601ad7)
+        ;
+
+        
+    
+    
+            feature_group_6fdcbaa3c086ac5782e2081294781afa.addTo(map_fc1eda446452a20a9dc77060d7de5b18);
+        
+    
+            var feature_group_93c6038c9104357fb39556e2120ea941 = L.featureGroup(
+                {}
+            );
+        
+    
+            var poly_line_558f022b5ba5eb51df4b6e64be7e11ba = L.polyline(
+                [[40.70223597965399, -73.8019752477336], [40.70245387884107, -73.77734902381144]],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(feature_group_93c6038c9104357fb39556e2120ea941);
+        
+    
+            poly_line_558f022b5ba5eb51df4b6e64be7e11ba.bindTooltip(
+                `<div>
+                     QN1
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_2a3a3f29f9424d718a425fe92482c2d7 = L.marker(
+                [40.70223597965399, -73.8019752477336],
+                {}
+            ).addTo(feature_group_93c6038c9104357fb39556e2120ea941);
+        
+    
+            var icon_499ecb584659c903d30fd022388084f2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_2a3a3f29f9424d718a425fe92482c2d7.setIcon(icon_499ecb584659c903d30fd022388084f2);
+        
+    
+        var popup_7f76b57910fccae9c2a34fb403848387 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_0a630a53bb57dc0f18ab92ceaa218b6d = $(`<div id="html_0a630a53bb57dc0f18ab92ceaa218b6d" style="width: 100.0%; height: 100.0%;">Shuttle: QN1<br>Stop: Archer Ave and 153 Street</div>`)[0];
+                popup_7f76b57910fccae9c2a34fb403848387.setContent(html_0a630a53bb57dc0f18ab92ceaa218b6d);
+            
+        
+
+        marker_2a3a3f29f9424d718a425fe92482c2d7.bindPopup(popup_7f76b57910fccae9c2a34fb403848387)
+        ;
+
+        
+    
+    
+            var poly_line_a35f12e673f2fb28bfe408f606cd4280 = L.polyline(
+                [[40.63915256347144, -74.1288546765727], [40.70245387884107, -73.77734902381144]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(feature_group_93c6038c9104357fb39556e2120ea941);
+        
+    
+            poly_line_a35f12e673f2fb28bfe408f606cd4280.bindTooltip(
+                `<div>
+                     QN10
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_c5dbe02e9dafd8bdd4a51cb5a71ed992 = L.marker(
+                [40.63915256347144, -74.1288546765727],
+                {}
+            ).addTo(feature_group_93c6038c9104357fb39556e2120ea941);
+        
+    
+            var icon_49117c95023643b7dee016b4160dada7 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_c5dbe02e9dafd8bdd4a51cb5a71ed992.setIcon(icon_49117c95023643b7dee016b4160dada7);
+        
+    
+        var popup_b76f0837c413042b3455f01b63846db1 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_56532024340eedcda6b3f0c13923b966 = $(`<div id="html_56532024340eedcda6b3f0c13923b966" style="width: 100.0%; height: 100.0%;">Shuttle: QN10<br>Stop: 1957 Richmond Terrace (Depot)</div>`)[0];
+                popup_b76f0837c413042b3455f01b63846db1.setContent(html_56532024340eedcda6b3f0c13923b966);
+            
+        
+
+        marker_c5dbe02e9dafd8bdd4a51cb5a71ed992.bindPopup(popup_b76f0837c413042b3455f01b63846db1)
+        ;
+
+        
+    
+    
+            var poly_line_db0cfd5ad8f16205abd2b47019b5b743 = L.polyline(
+                [[40.63403351057349, -73.9487507458862], [40.63303273928996, -73.92840814588622], [40.6338030691396, -73.91630561890129], [40.63389451091254, -73.88966625937859], [40.70245387884107, -73.77734902381144]],
+                {"bubblingMouseEvents": true, "color": "lime", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "lime", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(feature_group_93c6038c9104357fb39556e2120ea941);
+        
+    
+            poly_line_db0cfd5ad8f16205abd2b47019b5b743.bindTooltip(
+                `<div>
+                     QN2
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a368956b77a461a0f397fe20e48ec931 = L.marker(
+                [40.63403351057349, -73.9487507458862],
+                {}
+            ).addTo(feature_group_93c6038c9104357fb39556e2120ea941);
+        
+    
+            var icon_868280fababbce17fd4b8757defabf30 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_a368956b77a461a0f397fe20e48ec931.setIcon(icon_868280fababbce17fd4b8757defabf30);
+        
+    
+        var popup_021d5bdd9c0bb476066dd4e56fde98cb = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_82fb841b0ee07148de3706de49f7fa35 = $(`<div id="html_82fb841b0ee07148de3706de49f7fa35" style="width: 100.0%; height: 100.0%;">Shuttle: QN2<br>Stop: Flatbush & Glendwood Avenue</div>`)[0];
+                popup_021d5bdd9c0bb476066dd4e56fde98cb.setContent(html_82fb841b0ee07148de3706de49f7fa35);
+            
+        
+
+        marker_a368956b77a461a0f397fe20e48ec931.bindPopup(popup_021d5bdd9c0bb476066dd4e56fde98cb)
+        ;
+
+        
+    
+    
+            var marker_3570513f54afb035208d3329dd7aaffc = L.marker(
+                [40.63303273928996, -73.92840814588622],
+                {}
+            ).addTo(feature_group_93c6038c9104357fb39556e2120ea941);
+        
+    
+            var icon_836c2b6b027de3ea72b72b619c7c0bce = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_3570513f54afb035208d3329dd7aaffc.setIcon(icon_836c2b6b027de3ea72b72b619c7c0bce);
+        
+    
+        var popup_236913173f5344039f3e4ecf9b89a488 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_fcd3b9fcaf5c7dd686d9af3e9f70b0c6 = $(`<div id="html_fcd3b9fcaf5c7dd686d9af3e9f70b0c6" style="width: 100.0%; height: 100.0%;">Shuttle: QN2<br>Stop: Utica & Avenue H</div>`)[0];
+                popup_236913173f5344039f3e4ecf9b89a488.setContent(html_fcd3b9fcaf5c7dd686d9af3e9f70b0c6);
+            
+        
+
+        marker_3570513f54afb035208d3329dd7aaffc.bindPopup(popup_236913173f5344039f3e4ecf9b89a488)
+        ;
+
+        
+    
+    
+            var marker_27c3831c69ce7b6b6b633515e661eca7 = L.marker(
+                [40.6338030691396, -73.91630561890129],
+                {}
+            ).addTo(feature_group_93c6038c9104357fb39556e2120ea941);
+        
+    
+            var icon_c8250b4de6c41722d83ab511716ce015 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_27c3831c69ce7b6b6b633515e661eca7.setIcon(icon_c8250b4de6c41722d83ab511716ce015);
+        
+    
+        var popup_4db822188044eea8718f480356bb1399 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d28d26b6d959764a290be75987016fa7 = $(`<div id="html_d28d26b6d959764a290be75987016fa7" style="width: 100.0%; height: 100.0%;">Shuttle: QN2<br>Stop: Flatlands Ave and East 76th Street</div>`)[0];
+                popup_4db822188044eea8718f480356bb1399.setContent(html_d28d26b6d959764a290be75987016fa7);
+            
+        
+
+        marker_27c3831c69ce7b6b6b633515e661eca7.bindPopup(popup_4db822188044eea8718f480356bb1399)
+        ;
+
+        
+    
+    
+            var marker_c3d707bb8f97c742a76c8aff202e3cb6 = L.marker(
+                [40.63389451091254, -73.88966625937859],
+                {}
+            ).addTo(feature_group_93c6038c9104357fb39556e2120ea941);
+        
+    
+            var icon_66b4d521996705909a472ec7e0788d60 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_c3d707bb8f97c742a76c8aff202e3cb6.setIcon(icon_66b4d521996705909a472ec7e0788d60);
+        
+    
+        var popup_e6c388e60e9c3870d0805bc3275fee6d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_417ad41d05d2d00f02bb24156770e07d = $(`<div id="html_417ad41d05d2d00f02bb24156770e07d" style="width: 100.0%; height: 100.0%;">Shuttle: QN2<br>Stop: Seaview Ave & Rockaway Aveenue</div>`)[0];
+                popup_e6c388e60e9c3870d0805bc3275fee6d.setContent(html_417ad41d05d2d00f02bb24156770e07d);
+            
+        
+
+        marker_c3d707bb8f97c742a76c8aff202e3cb6.bindPopup(popup_e6c388e60e9c3870d0805bc3275fee6d)
+        ;
+
+        
+    
+    
+            var poly_line_e5b301616fbea360a57271daf852ec6d = L.polyline(
+                [[40.757236798203806, -73.90770957286466], [40.75827581436192, -73.88209820540229], [40.70245387884107, -73.77734902381144]],
+                {"bubblingMouseEvents": true, "color": "fuchsia", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "fuchsia", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(feature_group_93c6038c9104357fb39556e2120ea941);
+        
+    
+            poly_line_e5b301616fbea360a57271daf852ec6d.bindTooltip(
+                `<div>
+                     QN3
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_ee6ab1f7f00d9dc51568fd401ea879c7 = L.marker(
+                [40.757236798203806, -73.90770957286466],
+                {}
+            ).addTo(feature_group_93c6038c9104357fb39556e2120ea941);
+        
+    
+            var icon_f62c306d8720df803162d34c78ac22f7 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_ee6ab1f7f00d9dc51568fd401ea879c7.setIcon(icon_f62c306d8720df803162d34c78ac22f7);
+        
+    
+        var popup_39fa15d48a25ab0b978d2048c606a95b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d2f4b041e7c358bf311f196c6cd10a40 = $(`<div id="html_d2f4b041e7c358bf311f196c6cd10a40" style="width: 100.0%; height: 100.0%;">Shuttle: QN3<br>Stop: 31 st Avenue and 51 st Street</div>`)[0];
+                popup_39fa15d48a25ab0b978d2048c606a95b.setContent(html_d2f4b041e7c358bf311f196c6cd10a40);
+            
+        
+
+        marker_ee6ab1f7f00d9dc51568fd401ea879c7.bindPopup(popup_39fa15d48a25ab0b978d2048c606a95b)
+        ;
+
+        
+    
+    
+            var marker_e27a17ab7e013787c5addf5fcf648a23 = L.marker(
+                [40.75827581436192, -73.88209820540229],
+                {}
+            ).addTo(feature_group_93c6038c9104357fb39556e2120ea941);
+        
+    
+            var icon_882e98c09dcee2cc3d1ec8ee6896df3d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_e27a17ab7e013787c5addf5fcf648a23.setIcon(icon_882e98c09dcee2cc3d1ec8ee6896df3d);
+        
+    
+        var popup_23ed134dac9b2b19ae06a9a108fc7f88 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_754b491c92ccddaf95955c0b57066702 = $(`<div id="html_754b491c92ccddaf95955c0b57066702" style="width: 100.0%; height: 100.0%;">Shuttle: QN3<br>Stop: 32 Avenue & 86th Street</div>`)[0];
+                popup_23ed134dac9b2b19ae06a9a108fc7f88.setContent(html_754b491c92ccddaf95955c0b57066702);
+            
+        
+
+        marker_e27a17ab7e013787c5addf5fcf648a23.bindPopup(popup_23ed134dac9b2b19ae06a9a108fc7f88)
+        ;
+
+        
+    
+    
+            var poly_line_f41703974e11deb2be2d976c133c12b9 = L.polyline(
+                [[40.675699482678056, -73.8108972035557], [40.683989096293004, -73.84762781704768], [40.68641311832773, -73.82431207842112], [40.70245387884107, -73.77734902381144]],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(feature_group_93c6038c9104357fb39556e2120ea941);
+        
+    
+            poly_line_f41703974e11deb2be2d976c133c12b9.bindTooltip(
+                `<div>
+                     QN4
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_b19f951a8bb600006745d5e97f3b782c = L.marker(
+                [40.675699482678056, -73.8108972035557],
+                {}
+            ).addTo(feature_group_93c6038c9104357fb39556e2120ea941);
+        
+    
+            var icon_ec36f1f97dfefcd742ca636b0c0dfd6a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_b19f951a8bb600006745d5e97f3b782c.setIcon(icon_ec36f1f97dfefcd742ca636b0c0dfd6a);
+        
+    
+        var popup_8a967c743b75e43ab8041be36fae58dd = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f369f62fb673e23bdc371e0c5978742e = $(`<div id="html_f369f62fb673e23bdc371e0c5978742e" style="width: 100.0%; height: 100.0%;">Shuttle: QN4<br>Stop: 127st and Foch blvd</div>`)[0];
+                popup_8a967c743b75e43ab8041be36fae58dd.setContent(html_f369f62fb673e23bdc371e0c5978742e);
+            
+        
+
+        marker_b19f951a8bb600006745d5e97f3b782c.bindPopup(popup_8a967c743b75e43ab8041be36fae58dd)
+        ;
+
+        
+    
+    
+            var marker_c385e9381fedf8e2506517b91bbdd49f = L.marker(
+                [40.683989096293004, -73.84762781704768],
+                {}
+            ).addTo(feature_group_93c6038c9104357fb39556e2120ea941);
+        
+    
+            var icon_3806573ef6a40dffb279e2a05583795d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_c385e9381fedf8e2506517b91bbdd49f.setIcon(icon_3806573ef6a40dffb279e2a05583795d);
+        
+    
+        var popup_0050e4e6dcce8b635c75ec2c64d64f8b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_e04ac57fad9a3f16223e29c149ba1736 = $(`<div id="html_e04ac57fad9a3f16223e29c149ba1736" style="width: 100.0%; height: 100.0%;">Shuttle: QN4<br>Stop: 101 Avenue & 93rd street</div>`)[0];
+                popup_0050e4e6dcce8b635c75ec2c64d64f8b.setContent(html_e04ac57fad9a3f16223e29c149ba1736);
+            
+        
+
+        marker_c385e9381fedf8e2506517b91bbdd49f.bindPopup(popup_0050e4e6dcce8b635c75ec2c64d64f8b)
+        ;
+
+        
+    
+    
+            var marker_9617cbf1d51390b5feabcc2b5338d781 = L.marker(
+                [40.68641311832773, -73.82431207842112],
+                {}
+            ).addTo(feature_group_93c6038c9104357fb39556e2120ea941);
+        
+    
+            var icon_1e1cb1faea1934346ef074497a8a0257 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_9617cbf1d51390b5feabcc2b5338d781.setIcon(icon_1e1cb1faea1934346ef074497a8a0257);
+        
+    
+        var popup_6b19aa7d8a26e5bdb553dbeb54193e9e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_e621db3b4cdd99d6c8762f90bbf9daad = $(`<div id="html_e621db3b4cdd99d6c8762f90bbf9daad" style="width: 100.0%; height: 100.0%;">Shuttle: QN4<br>Stop: Lefferts & Liberty Avenue</div>`)[0];
+                popup_6b19aa7d8a26e5bdb553dbeb54193e9e.setContent(html_e621db3b4cdd99d6c8762f90bbf9daad);
+            
+        
+
+        marker_9617cbf1d51390b5feabcc2b5338d781.bindPopup(popup_6b19aa7d8a26e5bdb553dbeb54193e9e)
+        ;
+
+        
+    
+    
+            var poly_line_ba5f14124b22168fc907b2ebbcec92b3 = L.polyline(
+                [[40.84930870265419, -73.93410805512953], [40.70245387884107, -73.77734902381144]],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "yellow", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(feature_group_93c6038c9104357fb39556e2120ea941);
+        
+    
+            poly_line_ba5f14124b22168fc907b2ebbcec92b3.bindTooltip(
+                `<div>
+                     QN5
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_acdc44d4e86079a4506a1d4b6084f235 = L.marker(
+                [40.84930870265419, -73.93410805512953],
+                {}
+            ).addTo(feature_group_93c6038c9104357fb39556e2120ea941);
+        
+    
+            var icon_8edde853a458d503b2d7a738ba00203c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_acdc44d4e86079a4506a1d4b6084f235.setIcon(icon_8edde853a458d503b2d7a738ba00203c);
+        
+    
+        var popup_e432327c6c55b7c831df4f8c9d59186e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_069056d0d2dd863304201be91c4b44bf = $(`<div id="html_069056d0d2dd863304201be91c4b44bf" style="width: 100.0%; height: 100.0%;">Shuttle: QN5<br>Stop: 181st & St Nicholas</div>`)[0];
+                popup_e432327c6c55b7c831df4f8c9d59186e.setContent(html_069056d0d2dd863304201be91c4b44bf);
+            
+        
+
+        marker_acdc44d4e86079a4506a1d4b6084f235.bindPopup(popup_e432327c6c55b7c831df4f8c9d59186e)
+        ;
+
+        
+    
+    
+            var poly_line_325a6106ee535aecfd4dfc3872a675b1 = L.polyline(
+                [[40.831101275294145, -73.84513563238336], [40.72042869700642, -73.76112221463397], [40.71314864366866, -73.76799598821036], [40.70245387884107, -73.77734902381144]],
+                {"bubblingMouseEvents": true, "color": "cyan", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "cyan", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(feature_group_93c6038c9104357fb39556e2120ea941);
+        
+    
+            poly_line_325a6106ee535aecfd4dfc3872a675b1.bindTooltip(
+                `<div>
+                     QN6
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_cf2d5fa9e253743e3efd0d8db4b66425 = L.marker(
+                [40.831101275294145, -73.84513563238336],
+                {}
+            ).addTo(feature_group_93c6038c9104357fb39556e2120ea941);
+        
+    
+            var icon_c4d7a88e813e0101f560e7bdcaa0ad40 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_cf2d5fa9e253743e3efd0d8db4b66425.setIcon(icon_c4d7a88e813e0101f560e7bdcaa0ad40);
+        
+    
+        var popup_7fd588430a2f90042d3feeb80ec4bff0 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_34cb381dcae60b33871cfab749a309a6 = $(`<div id="html_34cb381dcae60b33871cfab749a309a6" style="width: 100.0%; height: 100.0%;">Shuttle: QN6<br>Stop: 1101 Zerega (Depot)</div>`)[0];
+                popup_7fd588430a2f90042d3feeb80ec4bff0.setContent(html_34cb381dcae60b33871cfab749a309a6);
+            
+        
+
+        marker_cf2d5fa9e253743e3efd0d8db4b66425.bindPopup(popup_7fd588430a2f90042d3feeb80ec4bff0)
+        ;
+
+        
+    
+    
+            var marker_e9057cad00665c614b8b17abd7632ccd = L.marker(
+                [40.72042869700642, -73.76112221463397],
+                {}
+            ).addTo(feature_group_93c6038c9104357fb39556e2120ea941);
+        
+    
+            var icon_a25b72977cd37f71caa784e22132dc8d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_e9057cad00665c614b8b17abd7632ccd.setIcon(icon_a25b72977cd37f71caa784e22132dc8d);
+        
+    
+        var popup_8949e933f84f9ec8d3e716f6feb1a120 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_cf2185b49b3426e81aead3722602ca1e = $(`<div id="html_cf2185b49b3426e81aead3722602ca1e" style="width: 100.0%; height: 100.0%;">Shuttle: QN6<br>Stop: Hillside Ave/ Clearview</div>`)[0];
+                popup_8949e933f84f9ec8d3e716f6feb1a120.setContent(html_cf2185b49b3426e81aead3722602ca1e);
+            
+        
+
+        marker_e9057cad00665c614b8b17abd7632ccd.bindPopup(popup_8949e933f84f9ec8d3e716f6feb1a120)
+        ;
+
+        
+    
+    
+            var marker_bec21a255fa9c4bc3dc7b03646c6c89a = L.marker(
+                [40.71314864366866, -73.76799598821036],
+                {}
+            ).addTo(feature_group_93c6038c9104357fb39556e2120ea941);
+        
+    
+            var icon_edf2509a7a7d8555a905ad4f18cd561a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_bec21a255fa9c4bc3dc7b03646c6c89a.setIcon(icon_edf2509a7a7d8555a905ad4f18cd561a);
+        
+    
+        var popup_256eb4605b3adf0c7d0a11c1d5b20508 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c52546b2ffdb019ef80f6beb8d7dd4b3 = $(`<div id="html_c52546b2ffdb019ef80f6beb8d7dd4b3" style="width: 100.0%; height: 100.0%;">Shuttle: QN6<br>Stop: 192nd st & Jamaica Ave</div>`)[0];
+                popup_256eb4605b3adf0c7d0a11c1d5b20508.setContent(html_c52546b2ffdb019ef80f6beb8d7dd4b3);
+            
+        
+
+        marker_bec21a255fa9c4bc3dc7b03646c6c89a.bindPopup(popup_256eb4605b3adf0c7d0a11c1d5b20508)
+        ;
+
+        
+    
+    
+            var poly_line_1c7650af951bd3e4427f12eebe92e9a3 = L.polyline(
+                [[40.831521470722386, -73.84535837286077], [40.70245387884107, -73.77734902381144]],
+                {"bubblingMouseEvents": true, "color": "magenta", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "magenta", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(feature_group_93c6038c9104357fb39556e2120ea941);
+        
+    
+            poly_line_1c7650af951bd3e4427f12eebe92e9a3.bindTooltip(
+                `<div>
+                     QN7
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_9ab8f01701370cd97e2c3101c9cd8147 = L.marker(
+                [40.831521470722386, -73.84535837286077],
+                {}
+            ).addTo(feature_group_93c6038c9104357fb39556e2120ea941);
+        
+    
+            var icon_b2751f61db8ada113c7120c0f301e6f8 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_9ab8f01701370cd97e2c3101c9cd8147.setIcon(icon_b2751f61db8ada113c7120c0f301e6f8);
+        
+    
+        var popup_aec0be0d0e1e8c5dc7086f8ac7c61a94 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d07c0e2d525d506ae903a5f1ee73de57 = $(`<div id="html_d07c0e2d525d506ae903a5f1ee73de57" style="width: 100.0%; height: 100.0%;">Shuttle: QN7<br>Stop: 1101 Zerega (Depot)</div>`)[0];
+                popup_aec0be0d0e1e8c5dc7086f8ac7c61a94.setContent(html_d07c0e2d525d506ae903a5f1ee73de57);
+            
+        
+
+        marker_9ab8f01701370cd97e2c3101c9cd8147.bindPopup(popup_aec0be0d0e1e8c5dc7086f8ac7c61a94)
+        ;
+
+        
+    
+    
+            var poly_line_1dd9a021715cccb4a4759d090105d3f4 = L.polyline(
+                [[40.831521470722386, -73.84535837286077], [40.70245387884107, -73.77734902381144]],
+                {"bubblingMouseEvents": true, "color": "navy", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "navy", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(feature_group_93c6038c9104357fb39556e2120ea941);
+        
+    
+            poly_line_1dd9a021715cccb4a4759d090105d3f4.bindTooltip(
+                `<div>
+                     QN8
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_33db0c7d1e5172fffca7526ae0fe45b5 = L.marker(
+                [40.831521470722386, -73.84535837286077],
+                {}
+            ).addTo(feature_group_93c6038c9104357fb39556e2120ea941);
+        
+    
+            var icon_759ca5e6ce1ea85208b5f037b89f2b17 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_33db0c7d1e5172fffca7526ae0fe45b5.setIcon(icon_759ca5e6ce1ea85208b5f037b89f2b17);
+        
+    
+        var popup_6202ef72bf36fcb248b11dfc27c296f2 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_aef9281143a3ebb91424ca67b9940ab5 = $(`<div id="html_aef9281143a3ebb91424ca67b9940ab5" style="width: 100.0%; height: 100.0%;">Shuttle: QN8<br>Stop: 1101 Zerega (Depot)</div>`)[0];
+                popup_6202ef72bf36fcb248b11dfc27c296f2.setContent(html_aef9281143a3ebb91424ca67b9940ab5);
+            
+        
+
+        marker_33db0c7d1e5172fffca7526ae0fe45b5.bindPopup(popup_6202ef72bf36fcb248b11dfc27c296f2)
+        ;
+
+        
+    
+    
+            var poly_line_202486decfc399668e4439228dbe4618 = L.polyline(
+                [[40.57713685146313, -73.98155150356088], [40.65893470555517, -73.89073909006416], [40.70245387884107, -73.77734902381144]],
+                {"bubblingMouseEvents": true, "color": "limegreen", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "limegreen", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(feature_group_93c6038c9104357fb39556e2120ea941);
+        
+    
+            poly_line_202486decfc399668e4439228dbe4618.bindTooltip(
+                `<div>
+                     QN9
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_d9f101241e3124c1c69dbceb5f88c4bc = L.marker(
+                [40.57713685146313, -73.98155150356088],
+                {}
+            ).addTo(feature_group_93c6038c9104357fb39556e2120ea941);
+        
+    
+            var icon_70b4ac0dc774132054bbb03e2030b600 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_d9f101241e3124c1c69dbceb5f88c4bc.setIcon(icon_70b4ac0dc774132054bbb03e2030b600);
+        
+    
+        var popup_6aa57fc58bc5af3958abe7fe13c02b9a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_51c3aae4aa1fb33ea74b68cdf300d06a = $(`<div id="html_51c3aae4aa1fb33ea74b68cdf300d06a" style="width: 100.0%; height: 100.0%;">Shuttle: QN9<br>Stop: Stillwell & Mermaid Ave</div>`)[0];
+                popup_6aa57fc58bc5af3958abe7fe13c02b9a.setContent(html_51c3aae4aa1fb33ea74b68cdf300d06a);
+            
+        
+
+        marker_d9f101241e3124c1c69dbceb5f88c4bc.bindPopup(popup_6aa57fc58bc5af3958abe7fe13c02b9a)
+        ;
+
+        
+    
+    
+            var marker_7f84bb0573b82c493a84424fa0938b23 = L.marker(
+                [40.65893470555517, -73.89073909006416],
+                {}
+            ).addTo(feature_group_93c6038c9104357fb39556e2120ea941);
+        
+    
+            var icon_c138682c837393b3c29ab03a04993b32 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_7f84bb0573b82c493a84424fa0938b23.setIcon(icon_c138682c837393b3c29ab03a04993b32);
+        
+    
+        var popup_1494000e01ccb30f2ade582e47ce793e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_74940b8c23cb16543672d57d015b7f69 = $(`<div id="html_74940b8c23cb16543672d57d015b7f69" style="width: 100.0%; height: 100.0%;">Shuttle: QN9<br>Stop: Pennsylvania Ave & Linden</div>`)[0];
+                popup_1494000e01ccb30f2ade582e47ce793e.setContent(html_74940b8c23cb16543672d57d015b7f69);
+            
+        
+
+        marker_7f84bb0573b82c493a84424fa0938b23.bindPopup(popup_1494000e01ccb30f2ade582e47ce793e)
+        ;
+
+        
+    
+    
+            feature_group_93c6038c9104357fb39556e2120ea941.addTo(map_fc1eda446452a20a9dc77060d7de5b18);
+        
+    
+            var feature_group_8d5a664cf0676207f58e10fbe2ebd48e = L.featureGroup(
+                {}
+            );
+        
+    
+            var poly_line_9a39acbad400b442da5079b84bd0a01d = L.polyline(
+                [[40.831521470722386, -73.84535837286077], [40.63915256347144, -74.1288546765727]],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(feature_group_8d5a664cf0676207f58e10fbe2ebd48e);
+        
+    
+            poly_line_9a39acbad400b442da5079b84bd0a01d.bindTooltip(
+                `<div>
+                     RT1
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_4bae700091614381f4231a48d7596af4 = L.marker(
+                [40.831521470722386, -73.84535837286077],
+                {}
+            ).addTo(feature_group_8d5a664cf0676207f58e10fbe2ebd48e);
+        
+    
+            var icon_7bae101a86337ae6799d78353c6cbe3d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_4bae700091614381f4231a48d7596af4.setIcon(icon_7bae101a86337ae6799d78353c6cbe3d);
+        
+    
+        var popup_b9117d5581f8a757f6331a7635000da8 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_ad766432beb788f92725203d02d60888 = $(`<div id="html_ad766432beb788f92725203d02d60888" style="width: 100.0%; height: 100.0%;">Shuttle: RT1<br>Stop: 1101 Zerega (Depot)</div>`)[0];
+                popup_b9117d5581f8a757f6331a7635000da8.setContent(html_ad766432beb788f92725203d02d60888);
+            
+        
+
+        marker_4bae700091614381f4231a48d7596af4.bindPopup(popup_b9117d5581f8a757f6331a7635000da8)
+        ;
+
+        
+    
+    
+            var poly_line_19d2bbb5adf9f9e1d433f70840755101 = L.polyline(
+                [[40.831521470722386, -73.84535837286077], [40.63915256347144, -74.1288546765727]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(feature_group_8d5a664cf0676207f58e10fbe2ebd48e);
+        
+    
+            poly_line_19d2bbb5adf9f9e1d433f70840755101.bindTooltip(
+                `<div>
+                     RT2
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_89c7180febd9943022b96f4ea5253e00 = L.marker(
+                [40.831521470722386, -73.84535837286077],
+                {}
+            ).addTo(feature_group_8d5a664cf0676207f58e10fbe2ebd48e);
+        
+    
+            var icon_1320734ab15a314bf350505899a0c00b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_89c7180febd9943022b96f4ea5253e00.setIcon(icon_1320734ab15a314bf350505899a0c00b);
+        
+    
+        var popup_6a425e0d402bd5113cb1e6fd567f60c4 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c6c6e04e4598836f3b20a80a1a122d4f = $(`<div id="html_c6c6e04e4598836f3b20a80a1a122d4f" style="width: 100.0%; height: 100.0%;">Shuttle: RT2<br>Stop: 1101 Zerega (Depot)</div>`)[0];
+                popup_6a425e0d402bd5113cb1e6fd567f60c4.setContent(html_c6c6e04e4598836f3b20a80a1a122d4f);
+            
+        
+
+        marker_89c7180febd9943022b96f4ea5253e00.bindPopup(popup_6a425e0d402bd5113cb1e6fd567f60c4)
+        ;
+
+        
+    
+    
+            var poly_line_d606646b491e2541e401d8af5b3a4f53 = L.polyline(
+                [[40.8617603104003, -73.92468495936676], [40.86175219628552, -73.92481370539693], [40.63915256347144, -74.1288546765727]],
+                {"bubblingMouseEvents": true, "color": "lime", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "lime", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(feature_group_8d5a664cf0676207f58e10fbe2ebd48e);
+        
+    
+            poly_line_d606646b491e2541e401d8af5b3a4f53.bindTooltip(
+                `<div>
+                     RT3
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_9b90131e107c958017b17b1e7acd17d0 = L.marker(
+                [40.8617603104003, -73.92468495936676],
+                {}
+            ).addTo(feature_group_8d5a664cf0676207f58e10fbe2ebd48e);
+        
+    
+            var icon_664900c8b03cc277c53d62c787f180c1 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_9b90131e107c958017b17b1e7acd17d0.setIcon(icon_664900c8b03cc277c53d62c787f180c1);
+        
+    
+        var popup_49a6a3bfe57a5d1741c128001ad10742 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_5c2060f851a1f0fa6e6e88e1c6eef70f = $(`<div id="html_5c2060f851a1f0fa6e6e88e1c6eef70f" style="width: 100.0%; height: 100.0%;">Shuttle: RT3<br>Stop: Dyckman Street & Nagle Avenue</div>`)[0];
+                popup_49a6a3bfe57a5d1741c128001ad10742.setContent(html_5c2060f851a1f0fa6e6e88e1c6eef70f);
+            
+        
+
+        marker_9b90131e107c958017b17b1e7acd17d0.bindPopup(popup_49a6a3bfe57a5d1741c128001ad10742)
+        ;
+
+        
+    
+    
+            var marker_2b08e1e33f5069e605ef5e767679bd75 = L.marker(
+                [40.86175219628552, -73.92481370539693],
+                {}
+            ).addTo(feature_group_8d5a664cf0676207f58e10fbe2ebd48e);
+        
+    
+            var icon_bbb264c6916f4f505e68053a7c39cf13 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_2b08e1e33f5069e605ef5e767679bd75.setIcon(icon_bbb264c6916f4f505e68053a7c39cf13);
+        
+    
+        var popup_d4eed493e1db6abcb8945cc6453f40a5 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c793b7a8e2df2561d76a08dd531bd1d7 = $(`<div id="html_c793b7a8e2df2561d76a08dd531bd1d7" style="width: 100.0%; height: 100.0%;">Shuttle: RT3<br>Stop: 116th Street & Lexington Avenue</div>`)[0];
+                popup_d4eed493e1db6abcb8945cc6453f40a5.setContent(html_c793b7a8e2df2561d76a08dd531bd1d7);
+            
+        
+
+        marker_2b08e1e33f5069e605ef5e767679bd75.bindPopup(popup_d4eed493e1db6abcb8945cc6453f40a5)
+        ;
+
+        
+    
+    
+            var poly_line_eedc0688503ec615c1419a60dba06cee = L.polyline(
+                [[40.64045862441132, -73.90592631890095], [40.63214251518557, -73.91866560355803], [40.642281367571925, -73.92925978821403], [40.63896643990857, -73.94538250355764], [40.6388284471972, -73.94828143239354], [40.63873109911528, -73.95381186122938], [40.62243920870748, -73.93654030355853], [40.57443275278919, -73.9886606458894], [40.63915256347144, -74.1288546765727]],
+                {"bubblingMouseEvents": true, "color": "fuchsia", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "fuchsia", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(feature_group_8d5a664cf0676207f58e10fbe2ebd48e);
+        
+    
+            poly_line_eedc0688503ec615c1419a60dba06cee.bindTooltip(
+                `<div>
+                     RT4
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_d7838f20b5f429912d242fe968684f0b = L.marker(
+                [40.64045862441132, -73.90592631890095],
+                {}
+            ).addTo(feature_group_8d5a664cf0676207f58e10fbe2ebd48e);
+        
+    
+            var icon_e55781c7e41c6e2372035c2bad2e27c7 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_d7838f20b5f429912d242fe968684f0b.setIcon(icon_e55781c7e41c6e2372035c2bad2e27c7);
+        
+    
+        var popup_8dc0a189864fbeb5c4da09e342472658 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a3df90003c1b31f3b43451e58fa0b4d0 = $(`<div id="html_a3df90003c1b31f3b43451e58fa0b4d0" style="width: 100.0%; height: 100.0%;">Shuttle: RT4<br>Stop: Flatlands Avenue and Remsen</div>`)[0];
+                popup_8dc0a189864fbeb5c4da09e342472658.setContent(html_a3df90003c1b31f3b43451e58fa0b4d0);
+            
+        
+
+        marker_d7838f20b5f429912d242fe968684f0b.bindPopup(popup_8dc0a189864fbeb5c4da09e342472658)
+        ;
+
+        
+    
+    
+            var marker_7628b53e4355b00a63eb8efada3c02e2 = L.marker(
+                [40.63214251518557, -73.91866560355803],
+                {}
+            ).addTo(feature_group_8d5a664cf0676207f58e10fbe2ebd48e);
+        
+    
+            var icon_312ef2e11a46c9a2b02d4068dd027b63 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_7628b53e4355b00a63eb8efada3c02e2.setIcon(icon_312ef2e11a46c9a2b02d4068dd027b63);
+        
+    
+        var popup_a9b92f33d180ea3f3483f60501131a58 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_8449c27a8aa5f4af014f019c7ce1804c = $(`<div id="html_8449c27a8aa5f4af014f019c7ce1804c" style="width: 100.0%; height: 100.0%;">Shuttle: RT4<br>Stop: Flatlands Avenue & Ralph Avenue</div>`)[0];
+                popup_a9b92f33d180ea3f3483f60501131a58.setContent(html_8449c27a8aa5f4af014f019c7ce1804c);
+            
+        
+
+        marker_7628b53e4355b00a63eb8efada3c02e2.bindPopup(popup_a9b92f33d180ea3f3483f60501131a58)
+        ;
+
+        
+    
+    
+            var marker_33657f1ff5cb2523bfe0d804280e0646 = L.marker(
+                [40.642281367571925, -73.92925978821403],
+                {}
+            ).addTo(feature_group_8d5a664cf0676207f58e10fbe2ebd48e);
+        
+    
+            var icon_6ca3e54f6f7bf90b7f9313248d6165a3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_33657f1ff5cb2523bfe0d804280e0646.setIcon(icon_6ca3e54f6f7bf90b7f9313248d6165a3);
+        
+    
+        var popup_f370436cf972c7445643d81449663e18 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_cc5147610d6173f7cd1cc08ef05d5ad4 = $(`<div id="html_cc5147610d6173f7cd1cc08ef05d5ad4" style="width: 100.0%; height: 100.0%;">Shuttle: RT4<br>Stop: Utica Avenue & Avenue D</div>`)[0];
+                popup_f370436cf972c7445643d81449663e18.setContent(html_cc5147610d6173f7cd1cc08ef05d5ad4);
+            
+        
+
+        marker_33657f1ff5cb2523bfe0d804280e0646.bindPopup(popup_f370436cf972c7445643d81449663e18)
+        ;
+
+        
+    
+    
+            var marker_4ec7dc7a1dc8d13896f43e8fa8e3d093 = L.marker(
+                [40.63896643990857, -73.94538250355764],
+                {}
+            ).addTo(feature_group_8d5a664cf0676207f58e10fbe2ebd48e);
+        
+    
+            var icon_02caecc60a020d0dfef448bd62291a80 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_4ec7dc7a1dc8d13896f43e8fa8e3d093.setIcon(icon_02caecc60a020d0dfef448bd62291a80);
+        
+    
+        var popup_db14272ba3ec5401bc92ab4f21a6857d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b34ae0dc7084d343aedda671e5ed68a0 = $(`<div id="html_b34ae0dc7084d343aedda671e5ed68a0" style="width: 100.0%; height: 100.0%;">Shuttle: RT4<br>Stop: Foster Avenue & New York Avenue</div>`)[0];
+                popup_db14272ba3ec5401bc92ab4f21a6857d.setContent(html_b34ae0dc7084d343aedda671e5ed68a0);
+            
+        
+
+        marker_4ec7dc7a1dc8d13896f43e8fa8e3d093.bindPopup(popup_db14272ba3ec5401bc92ab4f21a6857d)
+        ;
+
+        
+    
+    
+            var marker_3925046f902f498e849eaab71774b834 = L.marker(
+                [40.6388284471972, -73.94828143239354],
+                {}
+            ).addTo(feature_group_8d5a664cf0676207f58e10fbe2ebd48e);
+        
+    
+            var icon_66d3715a5b6ca9f25cdf901897ba66d9 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_3925046f902f498e849eaab71774b834.setIcon(icon_66d3715a5b6ca9f25cdf901897ba66d9);
+        
+    
+        var popup_4b23f49b12271d2e11572d180597aecc = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_afb6deeda3abdc5fe8507c3cb493dbbd = $(`<div id="html_afb6deeda3abdc5fe8507c3cb493dbbd" style="width: 100.0%; height: 100.0%;">Shuttle: RT4<br>Stop: Nostrand Avenue & Foster Avenue</div>`)[0];
+                popup_4b23f49b12271d2e11572d180597aecc.setContent(html_afb6deeda3abdc5fe8507c3cb493dbbd);
+            
+        
+
+        marker_3925046f902f498e849eaab71774b834.bindPopup(popup_4b23f49b12271d2e11572d180597aecc)
+        ;
+
+        
+    
+    
+            var marker_888db9d13e5fe084d0e32983f2becc32 = L.marker(
+                [40.63873109911528, -73.95381186122938],
+                {}
+            ).addTo(feature_group_8d5a664cf0676207f58e10fbe2ebd48e);
+        
+    
+            var icon_2669547958f3444a16ce608347e78f97 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_888db9d13e5fe084d0e32983f2becc32.setIcon(icon_2669547958f3444a16ce608347e78f97);
+        
+    
+        var popup_e6d7bc0a2f9e37e32fa7e877dec9c66d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_900e34d202ce50333c9c3fdfd7514d03 = $(`<div id="html_900e34d202ce50333c9c3fdfd7514d03" style="width: 100.0%; height: 100.0%;">Shuttle: RT4<br>Stop: Foster Avenue & Flatbush Avenue</div>`)[0];
+                popup_e6d7bc0a2f9e37e32fa7e877dec9c66d.setContent(html_900e34d202ce50333c9c3fdfd7514d03);
+            
+        
+
+        marker_888db9d13e5fe084d0e32983f2becc32.bindPopup(popup_e6d7bc0a2f9e37e32fa7e877dec9c66d)
+        ;
+
+        
+    
+    
+            var marker_f2177e025f91c619448df4b7e0a40c28 = L.marker(
+                [40.62243920870748, -73.93654030355853],
+                {}
+            ).addTo(feature_group_8d5a664cf0676207f58e10fbe2ebd48e);
+        
+    
+            var icon_78bcdf016af94c3a5084ee029f2e330d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_f2177e025f91c619448df4b7e0a40c28.setIcon(icon_78bcdf016af94c3a5084ee029f2e330d);
+        
+    
+        var popup_6a93e33428f823c542fc1b291efffcae = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_ee5de8b8630be916ee6e9252dc9d47bb = $(`<div id="html_ee5de8b8630be916ee6e9252dc9d47bb" style="width: 100.0%; height: 100.0%;">Shuttle: RT4<br>Stop: Flatbush Avenue & Kings Highway</div>`)[0];
+                popup_6a93e33428f823c542fc1b291efffcae.setContent(html_ee5de8b8630be916ee6e9252dc9d47bb);
+            
+        
+
+        marker_f2177e025f91c619448df4b7e0a40c28.bindPopup(popup_6a93e33428f823c542fc1b291efffcae)
+        ;
+
+        
+    
+    
+            var marker_b93053289965bc0de528dc7d00b92262 = L.marker(
+                [40.57443275278919, -73.9886606458894],
+                {}
+            ).addTo(feature_group_8d5a664cf0676207f58e10fbe2ebd48e);
+        
+    
+            var icon_d37109f1d120ff10c5a8b1da9547149c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_b93053289965bc0de528dc7d00b92262.setIcon(icon_d37109f1d120ff10c5a8b1da9547149c);
+        
+    
+        var popup_ec512772aaf74441b9edfee2136ff868 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_73c5e1a9656c4b0d555494d85be767a5 = $(`<div id="html_73c5e1a9656c4b0d555494d85be767a5" style="width: 100.0%; height: 100.0%;">Shuttle: RT4<br>Stop: Surf Avenue & West 22nd St</div>`)[0];
+                popup_ec512772aaf74441b9edfee2136ff868.setContent(html_73c5e1a9656c4b0d555494d85be767a5);
+            
+        
+
+        marker_b93053289965bc0de528dc7d00b92262.bindPopup(popup_ec512772aaf74441b9edfee2136ff868)
+        ;
+
+        
+    
+    
+            var poly_line_8ed4d155c38cf8e1b915da5ba26be65b = L.polyline(
+                [[40.636473104623065, -73.95849191890117], [40.638771805980866, -73.9537474882143], [40.640719011962105, -73.95568967287078], [40.64287281168763, -73.95765948821402], [40.64478214699213, -73.95794906122902], [40.63915256347144, -74.1288546765727]],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(feature_group_8d5a664cf0676207f58e10fbe2ebd48e);
+        
+    
+            poly_line_8ed4d155c38cf8e1b915da5ba26be65b.bindTooltip(
+                `<div>
+                     RT5
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_c7425c690b3be8a69f035ed7eaa3b86f = L.marker(
+                [40.636473104623065, -73.95849191890117],
+                {}
+            ).addTo(feature_group_8d5a664cf0676207f58e10fbe2ebd48e);
+        
+    
+            var icon_9e1a15890f4f448ef60ba537ee0d9ede = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_c7425c690b3be8a69f035ed7eaa3b86f.setIcon(icon_9e1a15890f4f448ef60ba537ee0d9ede);
+        
+    
+        var popup_d8d410dfc4ca45d3b5bd384cde0f77ef = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c6156ffffdeb1b61087cd44591d13786 = $(`<div id="html_c6156ffffdeb1b61087cd44591d13786" style="width: 100.0%; height: 100.0%;">Shuttle: RT5<br>Stop: Ocean Avenue & Foster Avenue</div>`)[0];
+                popup_d8d410dfc4ca45d3b5bd384cde0f77ef.setContent(html_c6156ffffdeb1b61087cd44591d13786);
+            
+        
+
+        marker_c7425c690b3be8a69f035ed7eaa3b86f.bindPopup(popup_d8d410dfc4ca45d3b5bd384cde0f77ef)
+        ;
+
+        
+    
+    
+            var marker_d528d25b8de26e3f5d59932278feda64 = L.marker(
+                [40.638771805980866, -73.9537474882143],
+                {}
+            ).addTo(feature_group_8d5a664cf0676207f58e10fbe2ebd48e);
+        
+    
+            var icon_c67ded99c2a49776d4a5028eb42a45b0 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_d528d25b8de26e3f5d59932278feda64.setIcon(icon_c67ded99c2a49776d4a5028eb42a45b0);
+        
+    
+        var popup_7589627362b8130f44f7bafef76094a8 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_836faa7be0ab7143aa9dac02aac848c4 = $(`<div id="html_836faa7be0ab7143aa9dac02aac848c4" style="width: 100.0%; height: 100.0%;">Shuttle: RT5<br>Stop: Foster Avenue & Flatbush Avenue</div>`)[0];
+                popup_7589627362b8130f44f7bafef76094a8.setContent(html_836faa7be0ab7143aa9dac02aac848c4);
+            
+        
+
+        marker_d528d25b8de26e3f5d59932278feda64.bindPopup(popup_7589627362b8130f44f7bafef76094a8)
+        ;
+
+        
+    
+    
+            var marker_4402c38539a031d8a8653daec9a0150f = L.marker(
+                [40.640719011962105, -73.95568967287078],
+                {}
+            ).addTo(feature_group_8d5a664cf0676207f58e10fbe2ebd48e);
+        
+    
+            var icon_6ad10ffd22e132f2a9453e61ec1d08b0 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_4402c38539a031d8a8653daec9a0150f.setIcon(icon_6ad10ffd22e132f2a9453e61ec1d08b0);
+        
+    
+        var popup_5ba220e25c1573d1d3c896f30fea4c25 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_743eb664edc5020c2e4bce52453e1036 = $(`<div id="html_743eb664edc5020c2e4bce52453e1036" style="width: 100.0%; height: 100.0%;">Shuttle: RT5<br>Stop: Avenue D & Flatbush Avenue</div>`)[0];
+                popup_5ba220e25c1573d1d3c896f30fea4c25.setContent(html_743eb664edc5020c2e4bce52453e1036);
+            
+        
+
+        marker_4402c38539a031d8a8653daec9a0150f.bindPopup(popup_5ba220e25c1573d1d3c896f30fea4c25)
+        ;
+
+        
+    
+    
+            var marker_ad47bde77023bb50ca0cc2e0807b5b2b = L.marker(
+                [40.64287281168763, -73.95765948821402],
+                {}
+            ).addTo(feature_group_8d5a664cf0676207f58e10fbe2ebd48e);
+        
+    
+            var icon_b84d3f27df9ac4459b8c02a0ea197e4e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_ad47bde77023bb50ca0cc2e0807b5b2b.setIcon(icon_b84d3f27df9ac4459b8c02a0ea197e4e);
+        
+    
+        var popup_78ecdb8e615bc0dc6e395fe850658b87 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_bd587b786faad324360ca4cc1cf44fb7 = $(`<div id="html_bd587b786faad324360ca4cc1cf44fb7" style="width: 100.0%; height: 100.0%;">Shuttle: RT5<br>Stop: Flatbush Avenue & Clarendon Avenue</div>`)[0];
+                popup_78ecdb8e615bc0dc6e395fe850658b87.setContent(html_bd587b786faad324360ca4cc1cf44fb7);
+            
+        
+
+        marker_ad47bde77023bb50ca0cc2e0807b5b2b.bindPopup(popup_78ecdb8e615bc0dc6e395fe850658b87)
+        ;
+
+        
+    
+    
+            var marker_534ff59a090c0cedfd3cb44a24449afa = L.marker(
+                [40.64478214699213, -73.95794906122902],
+                {}
+            ).addTo(feature_group_8d5a664cf0676207f58e10fbe2ebd48e);
+        
+    
+            var icon_5463730a9ff845c2dff67c24cb41ec68 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_534ff59a090c0cedfd3cb44a24449afa.setIcon(icon_5463730a9ff845c2dff67c24cb41ec68);
+        
+    
+        var popup_67eff8b6e479aa1de99da4476b7b25e2 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b71a72c143c290c0c7f641bb984ae4e3 = $(`<div id="html_b71a72c143c290c0c7f641bb984ae4e3" style="width: 100.0%; height: 100.0%;">Shuttle: RT5<br>Stop: Flatbush Avenue & Beverly Road</div>`)[0];
+                popup_67eff8b6e479aa1de99da4476b7b25e2.setContent(html_b71a72c143c290c0c7f641bb984ae4e3);
+            
+        
+
+        marker_534ff59a090c0cedfd3cb44a24449afa.bindPopup(popup_67eff8b6e479aa1de99da4476b7b25e2)
+        ;
+
+        
+    
+    
+            var poly_line_35aca49f3d897c36d1f9c493fa7a1bf6 = L.polyline(
+                [[40.65054911023912, -73.9587925189004], [40.63915256347144, -74.1288546765727]],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "yellow", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(feature_group_8d5a664cf0676207f58e10fbe2ebd48e);
+        
+    
+            poly_line_35aca49f3d897c36d1f9c493fa7a1bf6.bindTooltip(
+                `<div>
+                     RT6
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_ec4ef1f1a1871da93c029ea7174c6bd6 = L.marker(
+                [40.65054911023912, -73.9587925189004],
+                {}
+            ).addTo(feature_group_8d5a664cf0676207f58e10fbe2ebd48e);
+        
+    
+            var icon_a8b0cf4a581ed6b01e24c43d9fcef152 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_ec4ef1f1a1871da93c029ea7174c6bd6.setIcon(icon_a8b0cf4a581ed6b01e24c43d9fcef152);
+        
+    
+        var popup_449a7308c2d4ef8bf34a4b74477b0f19 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_91b5faa2134a7120b8a99c6599a74067 = $(`<div id="html_91b5faa2134a7120b8a99c6599a74067" style="width: 100.0%; height: 100.0%;">Shuttle: RT6<br>Stop: Church Avenue & Flatbush Avenue</div>`)[0];
+                popup_449a7308c2d4ef8bf34a4b74477b0f19.setContent(html_91b5faa2134a7120b8a99c6599a74067);
+            
+        
+
+        marker_ec4ef1f1a1871da93c029ea7174c6bd6.bindPopup(popup_449a7308c2d4ef8bf34a4b74477b0f19)
+        ;
+
+        
+    
+    
+            feature_group_8d5a664cf0676207f58e10fbe2ebd48e.addTo(map_fc1eda446452a20a9dc77060d7de5b18);
+        
+    
+            var feature_group_e170cdf8736918eee8f59f6fc9171025 = L.featureGroup(
+                {}
+            );
+        
+    
+            var poly_line_9f028634c5e903a7734f864ef0dd30d4 = L.polyline(
+                [[40.586342409118444, -73.97133334773962], [40.5855548596905, -73.98740987657558], [40.72896307317551, -73.94068983423975]],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(feature_group_e170cdf8736918eee8f59f6fc9171025);
+        
+    
+            poly_line_9f028634c5e903a7734f864ef0dd30d4.bindTooltip(
+                `<div>
+                     GP1
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_9a5cba800575d52768c92c3a805276b2 = L.marker(
+                [40.586342409118444, -73.97133334773962],
+                {}
+            ).addTo(feature_group_e170cdf8736918eee8f59f6fc9171025);
+        
+    
+            var icon_03524e0b63b70ea06db8b82d9260d90e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_9a5cba800575d52768c92c3a805276b2.setIcon(icon_03524e0b63b70ea06db8b82d9260d90e);
+        
+    
+        var popup_9efc6f7ad8e3d91b6b3c55f2330e3197 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_6ad0beef4f360cc921687fe355410033 = $(`<div id="html_6ad0beef4f360cc921687fe355410033" style="width: 100.0%; height: 100.0%;">Shuttle: GP1<br>Stop: Ave Z and W 2nd street</div>`)[0];
+                popup_9efc6f7ad8e3d91b6b3c55f2330e3197.setContent(html_6ad0beef4f360cc921687fe355410033);
+            
+        
+
+        marker_9a5cba800575d52768c92c3a805276b2.bindPopup(popup_9efc6f7ad8e3d91b6b3c55f2330e3197)
+        ;
+
+        
+    
+    
+            var marker_76024fa97ed2f718d4a0d42a64b90855 = L.marker(
+                [40.5855548596905, -73.98740987657558],
+                {}
+            ).addTo(feature_group_e170cdf8736918eee8f59f6fc9171025);
+        
+    
+            var icon_b0b7af56bce714384566b5a03aba19cf = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_76024fa97ed2f718d4a0d42a64b90855.setIcon(icon_b0b7af56bce714384566b5a03aba19cf);
+        
+    
+        var popup_58bc6612dec074421b82aa4db085b27d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b705c0123fd731a6055f8f5dd0fa046e = $(`<div id="html_b705c0123fd731a6055f8f5dd0fa046e" style="width: 100.0%; height: 100.0%;">Shuttle: GP1<br>Stop: Bay 50 and cropsey Ave</div>`)[0];
+                popup_58bc6612dec074421b82aa4db085b27d.setContent(html_b705c0123fd731a6055f8f5dd0fa046e);
+            
+        
+
+        marker_76024fa97ed2f718d4a0d42a64b90855.bindPopup(popup_58bc6612dec074421b82aa4db085b27d)
+        ;
+
+        
+    
+    
+            var poly_line_801eb81136f865ca7a5f0a1aafc28fa8 = L.polyline(
+                [[40.831125628896935, -73.8451678188909], [40.72896307317551, -73.94068983423975]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(feature_group_e170cdf8736918eee8f59f6fc9171025);
+        
+    
+            poly_line_801eb81136f865ca7a5f0a1aafc28fa8.bindTooltip(
+                `<div>
+                     GP10
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_87a0da2aae1ac1b3763d9aae528951c6 = L.marker(
+                [40.831125628896935, -73.8451678188909],
+                {}
+            ).addTo(feature_group_e170cdf8736918eee8f59f6fc9171025);
+        
+    
+            var icon_00e736efefde02029fde8630a0cd9139 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_87a0da2aae1ac1b3763d9aae528951c6.setIcon(icon_00e736efefde02029fde8630a0cd9139);
+        
+    
+        var popup_dd31c8e9a8296d631f1a973f91f15581 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_18d461cc9bc33f42b96e76ea347ee029 = $(`<div id="html_18d461cc9bc33f42b96e76ea347ee029" style="width: 100.0%; height: 100.0%;">Shuttle: GP10<br>Stop: 1101 Zerega (Depot)</div>`)[0];
+                popup_dd31c8e9a8296d631f1a973f91f15581.setContent(html_18d461cc9bc33f42b96e76ea347ee029);
+            
+        
+
+        marker_87a0da2aae1ac1b3763d9aae528951c6.bindPopup(popup_dd31c8e9a8296d631f1a973f91f15581)
+        ;
+
+        
+    
+    
+            var poly_line_81b0721dd23ef8f2bb247d5413082df2 = L.polyline(
+                [[40.63404979446846, -73.9487936612296], [40.636280613576545, -73.95117120540868], [40.63996971360716, -73.95132033239342], [40.65086458926592, -73.9524834612287], [40.66388459105973, -73.95394350540724], [40.72896307317551, -73.94068983423975]],
+                {"bubblingMouseEvents": true, "color": "lime", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "lime", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(feature_group_e170cdf8736918eee8f59f6fc9171025);
+        
+    
+            poly_line_81b0721dd23ef8f2bb247d5413082df2.bindTooltip(
+                `<div>
+                     GP2
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_b89af76c514d606de4dc321a6d1d4d85 = L.marker(
+                [40.63404979446846, -73.9487936612296],
+                {}
+            ).addTo(feature_group_e170cdf8736918eee8f59f6fc9171025);
+        
+    
+            var icon_b2b94031ee57bb7513addec5735cf914 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_b89af76c514d606de4dc321a6d1d4d85.setIcon(icon_b2b94031ee57bb7513addec5735cf914);
+        
+    
+        var popup_2e0e10655a8fe2b5d808021ec0b583e4 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_3305d65a2680d1d275851a2e1291480d = $(`<div id="html_3305d65a2680d1d275851a2e1291480d" style="width: 100.0%; height: 100.0%;">Shuttle: GP2<br>Stop: Glenwood RD and flatbush Ave</div>`)[0];
+                popup_2e0e10655a8fe2b5d808021ec0b583e4.setContent(html_3305d65a2680d1d275851a2e1291480d);
+            
+        
+
+        marker_b89af76c514d606de4dc321a6d1d4d85.bindPopup(popup_2e0e10655a8fe2b5d808021ec0b583e4)
+        ;
+
+        
+    
+    
+            var marker_57437a6e289c90584b475795b28050e3 = L.marker(
+                [40.636280613576545, -73.95117120540868],
+                {}
+            ).addTo(feature_group_e170cdf8736918eee8f59f6fc9171025);
+        
+    
+            var icon_180e439b6f1bf2316f24b2d5dfd283e6 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_57437a6e289c90584b475795b28050e3.setIcon(icon_180e439b6f1bf2316f24b2d5dfd283e6);
+        
+    
+        var popup_d3e40d78ec20c103c72dc4041b4e4289 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_4dc12e80b40fd73e3e5623fd165ba272 = $(`<div id="html_4dc12e80b40fd73e3e5623fd165ba272" style="width: 100.0%; height: 100.0%;">Shuttle: GP2<br>Stop: Rogers Ave and Farragut Rd</div>`)[0];
+                popup_d3e40d78ec20c103c72dc4041b4e4289.setContent(html_4dc12e80b40fd73e3e5623fd165ba272);
+            
+        
+
+        marker_57437a6e289c90584b475795b28050e3.bindPopup(popup_d3e40d78ec20c103c72dc4041b4e4289)
+        ;
+
+        
+    
+    
+            var marker_b30cd85c347ed99ed966b39947e2e689 = L.marker(
+                [40.63996971360716, -73.95132033239342],
+                {}
+            ).addTo(feature_group_e170cdf8736918eee8f59f6fc9171025);
+        
+    
+            var icon_a356d6f85b83c6a065524ddff5aaf5b7 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_b30cd85c347ed99ed966b39947e2e689.setIcon(icon_a356d6f85b83c6a065524ddff5aaf5b7);
+        
+    
+        var popup_670ced83378e1a6f3dbbcd7e791d708b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_495058636d2201062bbc12a51453456c = $(`<div id="html_495058636d2201062bbc12a51453456c" style="width: 100.0%; height: 100.0%;">Shuttle: GP2<br>Stop: Rogers and New Kirk</div>`)[0];
+                popup_670ced83378e1a6f3dbbcd7e791d708b.setContent(html_495058636d2201062bbc12a51453456c);
+            
+        
+
+        marker_b30cd85c347ed99ed966b39947e2e689.bindPopup(popup_670ced83378e1a6f3dbbcd7e791d708b)
+        ;
+
+        
+    
+    
+            var marker_2f35a8a02cf27c8bc04acba2a6d67710 = L.marker(
+                [40.65086458926592, -73.9524834612287],
+                {}
+            ).addTo(feature_group_e170cdf8736918eee8f59f6fc9171025);
+        
+    
+            var icon_edd1b793b384ddc0526936a7b2b14df4 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_2f35a8a02cf27c8bc04acba2a6d67710.setIcon(icon_edd1b793b384ddc0526936a7b2b14df4);
+        
+    
+        var popup_3363a67b5b9f1c60612d2b3c98dbdae9 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_eec3e73e1e8707e885f9105c14e11851 = $(`<div id="html_eec3e73e1e8707e885f9105c14e11851" style="width: 100.0%; height: 100.0%;">Shuttle: GP2<br>Stop: Rogers and Church Ave</div>`)[0];
+                popup_3363a67b5b9f1c60612d2b3c98dbdae9.setContent(html_eec3e73e1e8707e885f9105c14e11851);
+            
+        
+
+        marker_2f35a8a02cf27c8bc04acba2a6d67710.bindPopup(popup_3363a67b5b9f1c60612d2b3c98dbdae9)
+        ;
+
+        
+    
+    
+            var marker_c3464df3d9415ac039be415e201796bc = L.marker(
+                [40.66388459105973, -73.95394350540724],
+                {}
+            ).addTo(feature_group_e170cdf8736918eee8f59f6fc9171025);
+        
+    
+            var icon_f7cf6a1249d3a959fc2f65be2f5e8bb2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_c3464df3d9415ac039be415e201796bc.setIcon(icon_f7cf6a1249d3a959fc2f65be2f5e8bb2);
+        
+    
+        var popup_c17c3af92ccd12f2cad72f112e9fb94b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f82f68fab31a456fa651ec74987cb562 = $(`<div id="html_f82f68fab31a456fa651ec74987cb562" style="width: 100.0%; height: 100.0%;">Shuttle: GP2<br>Stop: Rogers and Empire</div>`)[0];
+                popup_c17c3af92ccd12f2cad72f112e9fb94b.setContent(html_f82f68fab31a456fa651ec74987cb562);
+            
+        
+
+        marker_c3464df3d9415ac039be415e201796bc.bindPopup(popup_c17c3af92ccd12f2cad72f112e9fb94b)
+        ;
+
+        
+    
+    
+            var poly_line_113b143d76e1220a5b72b169e8933d82 = L.polyline(
+                [[40.650573530037086, -73.95887834958717], [40.655006619998744, -73.95965678821342], [40.66328235441932, -73.96236521889976], [40.66790286577369, -73.9591461900637], [40.67330972627431, -73.9607123035559], [40.68907948199986, -73.95996668821157], [40.72896307317551, -73.94068983423975]],
+                {"bubblingMouseEvents": true, "color": "fuchsia", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "fuchsia", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(feature_group_e170cdf8736918eee8f59f6fc9171025);
+        
+    
+            poly_line_113b143d76e1220a5b72b169e8933d82.bindTooltip(
+                `<div>
+                     GP3
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_5f7d176ca5154d923c60777ea2babb2e = L.marker(
+                [40.650573530037086, -73.95887834958717],
+                {}
+            ).addTo(feature_group_e170cdf8736918eee8f59f6fc9171025);
+        
+    
+            var icon_90b01ce9b3de066920552ddb02566840 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_5f7d176ca5154d923c60777ea2babb2e.setIcon(icon_90b01ce9b3de066920552ddb02566840);
+        
+    
+        var popup_47d1f653fe3fdf0fe887b4c0ce8dd16e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_dfe92dc9b566ff0930c37f4d24657531 = $(`<div id="html_dfe92dc9b566ff0930c37f4d24657531" style="width: 100.0%; height: 100.0%;">Shuttle: GP3<br>Stop: Flatbush Ave and Church Ave</div>`)[0];
+                popup_47d1f653fe3fdf0fe887b4c0ce8dd16e.setContent(html_dfe92dc9b566ff0930c37f4d24657531);
+            
+        
+
+        marker_5f7d176ca5154d923c60777ea2babb2e.bindPopup(popup_47d1f653fe3fdf0fe887b4c0ce8dd16e)
+        ;
+
+        
+    
+    
+            var marker_088b572e7e14a421a6b25558d16d9520 = L.marker(
+                [40.655006619998744, -73.95965678821342],
+                {}
+            ).addTo(feature_group_e170cdf8736918eee8f59f6fc9171025);
+        
+    
+            var icon_bbfc219c70fc195a17fab9a8558f8516 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_088b572e7e14a421a6b25558d16d9520.setIcon(icon_bbfc219c70fc195a17fab9a8558f8516);
+        
+    
+        var popup_924a9978783928f55fdcd00fa3c7b1cf = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_de20667b8825cf9cf9127fe360544235 = $(`<div id="html_de20667b8825cf9cf9127fe360544235" style="width: 100.0%; height: 100.0%;">Shuttle: GP3<br>Stop: Flatbush Ave and Clarkson Ave</div>`)[0];
+                popup_924a9978783928f55fdcd00fa3c7b1cf.setContent(html_de20667b8825cf9cf9127fe360544235);
+            
+        
+
+        marker_088b572e7e14a421a6b25558d16d9520.bindPopup(popup_924a9978783928f55fdcd00fa3c7b1cf)
+        ;
+
+        
+    
+    
+            var marker_3b039a76b0b75cfbac13ca886288764b = L.marker(
+                [40.66328235441932, -73.96236521889976],
+                {}
+            ).addTo(feature_group_e170cdf8736918eee8f59f6fc9171025);
+        
+    
+            var icon_9cdb16a558a1d557bfaa797260d655ee = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_3b039a76b0b75cfbac13ca886288764b.setIcon(icon_9cdb16a558a1d557bfaa797260d655ee);
+        
+    
+        var popup_98ba1adcef78dce3712abb3075b94d89 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_28e5e360f06a36edd47fa0f1beb095b4 = $(`<div id="html_28e5e360f06a36edd47fa0f1beb095b4" style="width: 100.0%; height: 100.0%;">Shuttle: GP3<br>Stop: Flatbush Ave and Empire Ave</div>`)[0];
+                popup_98ba1adcef78dce3712abb3075b94d89.setContent(html_28e5e360f06a36edd47fa0f1beb095b4);
+            
+        
+
+        marker_3b039a76b0b75cfbac13ca886288764b.bindPopup(popup_98ba1adcef78dce3712abb3075b94d89)
+        ;
+
+        
+    
+    
+            var marker_075dc24ba4023906dd22896d3619d480 = L.marker(
+                [40.66790286577369, -73.9591461900637],
+                {}
+            ).addTo(feature_group_e170cdf8736918eee8f59f6fc9171025);
+        
+    
+            var icon_0d4ace27727b7eb07463cb773e16ef16 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_075dc24ba4023906dd22896d3619d480.setIcon(icon_0d4ace27727b7eb07463cb773e16ef16);
+        
+    
+        var popup_99a17fdf25acf64fc26cba78c9336817 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_efad713e275e73e390dfc4ab5dae1093 = $(`<div id="html_efad713e275e73e390dfc4ab5dae1093" style="width: 100.0%; height: 100.0%;">Shuttle: GP3<br>Stop: Carol Ave and Classon Ave</div>`)[0];
+                popup_99a17fdf25acf64fc26cba78c9336817.setContent(html_efad713e275e73e390dfc4ab5dae1093);
+            
+        
+
+        marker_075dc24ba4023906dd22896d3619d480.bindPopup(popup_99a17fdf25acf64fc26cba78c9336817)
+        ;
+
+        
+    
+    
+            var marker_c18ee2519e81e4bf7ae0bce987b72a73 = L.marker(
+                [40.67330972627431, -73.9607123035559],
+                {}
+            ).addTo(feature_group_e170cdf8736918eee8f59f6fc9171025);
+        
+    
+            var icon_25a6f64cacabb1fd110742345781efc3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_c18ee2519e81e4bf7ae0bce987b72a73.setIcon(icon_25a6f64cacabb1fd110742345781efc3);
+        
+    
+        var popup_684d954a3c13afa074bcff658d71cc83 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_16f16106129ed2cd6d49aec802d1c6ca = $(`<div id="html_16f16106129ed2cd6d49aec802d1c6ca" style="width: 100.0%; height: 100.0%;">Shuttle: GP3<br>Stop: Classon Ave and ST Johns PL</div>`)[0];
+                popup_684d954a3c13afa074bcff658d71cc83.setContent(html_16f16106129ed2cd6d49aec802d1c6ca);
+            
+        
+
+        marker_c18ee2519e81e4bf7ae0bce987b72a73.bindPopup(popup_684d954a3c13afa074bcff658d71cc83)
+        ;
+
+        
+    
+    
+            var marker_c75fe0bfba7295a106d41e8767975edf = L.marker(
+                [40.68907948199986, -73.95996668821157],
+                {}
+            ).addTo(feature_group_e170cdf8736918eee8f59f6fc9171025);
+        
+    
+            var icon_cbaeccf200f346e1395017421e3d8f22 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_c75fe0bfba7295a106d41e8767975edf.setIcon(icon_cbaeccf200f346e1395017421e3d8f22);
+        
+    
+        var popup_32372bb96537b53558a511ab29756d45 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c12a73a47db1f7ea6048a5b39b51acae = $(`<div id="html_c12a73a47db1f7ea6048a5b39b51acae" style="width: 100.0%; height: 100.0%;">Shuttle: GP3<br>Stop: Classon Ave and Lafayette Ave</div>`)[0];
+                popup_32372bb96537b53558a511ab29756d45.setContent(html_c12a73a47db1f7ea6048a5b39b51acae);
+            
+        
+
+        marker_c75fe0bfba7295a106d41e8767975edf.bindPopup(popup_32372bb96537b53558a511ab29756d45)
+        ;
+
+        
+    
+    
+            var poly_line_94778e059f91f435483e4409faed4443 = L.polyline(
+                [[40.70427920591373, -73.94783050355427], [40.709371626680586, -73.84322275937468], [40.72896307317551, -73.94068983423975]],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(feature_group_e170cdf8736918eee8f59f6fc9171025);
+        
+    
+            poly_line_94778e059f91f435483e4409faed4443.bindTooltip(
+                `<div>
+                     GP4
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_61d1420f629e420691fc5416a788f2a8 = L.marker(
+                [40.70427920591373, -73.94783050355427],
+                {}
+            ).addTo(feature_group_e170cdf8736918eee8f59f6fc9171025);
+        
+    
+            var icon_13f0fc52c88e9fc8c8d1a19083282cd2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_61d1420f629e420691fc5416a788f2a8.setIcon(icon_13f0fc52c88e9fc8c8d1a19083282cd2);
+        
+    
+        var popup_8e1274c13eddcdfa766e32a73ed2a0e2 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_591c3e5434349676d6f6ca02b9f71588 = $(`<div id="html_591c3e5434349676d6f6ca02b9f71588" style="width: 100.0%; height: 100.0%;">Shuttle: GP4<br>Stop: Lorimer and Broadway (Train Shuttle)</div>`)[0];
+                popup_8e1274c13eddcdfa766e32a73ed2a0e2.setContent(html_591c3e5434349676d6f6ca02b9f71588);
+            
+        
+
+        marker_61d1420f629e420691fc5416a788f2a8.bindPopup(popup_8e1274c13eddcdfa766e32a73ed2a0e2)
+        ;
+
+        
+    
+    
+            var marker_51058aec0779f35b5075743a6676a2e2 = L.marker(
+                [40.709371626680586, -73.84322275937468],
+                {}
+            ).addTo(feature_group_e170cdf8736918eee8f59f6fc9171025);
+        
+    
+            var icon_5174957b072cb031202e87b495790e57 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_51058aec0779f35b5075743a6676a2e2.setIcon(icon_5174957b072cb031202e87b495790e57);
+        
+    
+        var popup_e44f66c481f3bfca936a2483f8c99cf4 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f9db56a112b07407786e5c5206332f57 = $(`<div id="html_f9db56a112b07407786e5c5206332f57" style="width: 100.0%; height: 100.0%;">Shuttle: GP4<br>Stop: Union and Metropolitan Ave (Train Shuttle)</div>`)[0];
+                popup_e44f66c481f3bfca936a2483f8c99cf4.setContent(html_f9db56a112b07407786e5c5206332f57);
+            
+        
+
+        marker_51058aec0779f35b5075743a6676a2e2.bindPopup(popup_e44f66c481f3bfca936a2483f8c99cf4)
+        ;
+
+        
+    
+    
+            var poly_line_79839415fc125f1619566884ddf02b5a = L.polyline(
+                [[40.64327868802209, -73.90145476122906], [40.64039329506074, -73.90587227472164], [40.63565174839789, -73.91324310355782], [40.63064104932749, -73.92821269006564], [40.644573562818955, -73.92976163424416], [40.72896307317551, -73.94068983423975]],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "yellow", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(feature_group_e170cdf8736918eee8f59f6fc9171025);
+        
+    
+            poly_line_79839415fc125f1619566884ddf02b5a.bindTooltip(
+                `<div>
+                     GP5
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_55aff44966993960db64baf54fae4aa9 = L.marker(
+                [40.64327868802209, -73.90145476122906],
+                {}
+            ).addTo(feature_group_e170cdf8736918eee8f59f6fc9171025);
+        
+    
+            var icon_327989447245521f1524918a98595901 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_55aff44966993960db64baf54fae4aa9.setIcon(icon_327989447245521f1524918a98595901);
+        
+    
+        var popup_11b57159f6a03b655ca896345935628c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_986a41382a6853e91b72e95149e31f7b = $(`<div id="html_986a41382a6853e91b72e95149e31f7b" style="width: 100.0%; height: 100.0%;">Shuttle: GP5<br>Stop: Flatland and E 96 ST</div>`)[0];
+                popup_11b57159f6a03b655ca896345935628c.setContent(html_986a41382a6853e91b72e95149e31f7b);
+            
+        
+
+        marker_55aff44966993960db64baf54fae4aa9.bindPopup(popup_11b57159f6a03b655ca896345935628c)
+        ;
+
+        
+    
+    
+            var marker_33afceeca04236388859b20c2846afed = L.marker(
+                [40.64039329506074, -73.90587227472164],
+                {}
+            ).addTo(feature_group_e170cdf8736918eee8f59f6fc9171025);
+        
+    
+            var icon_6d5f3dd494fe2ccd77fa199bc1a8bfd9 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_33afceeca04236388859b20c2846afed.setIcon(icon_6d5f3dd494fe2ccd77fa199bc1a8bfd9);
+        
+    
+        var popup_35d8a6424ded97eb1b7c5d89af8b9e9e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c3065c4d12bf84dc292293bb793ae230 = $(`<div id="html_c3065c4d12bf84dc292293bb793ae230" style="width: 100.0%; height: 100.0%;">Shuttle: GP5<br>Stop: Flatland and Remsen</div>`)[0];
+                popup_35d8a6424ded97eb1b7c5d89af8b9e9e.setContent(html_c3065c4d12bf84dc292293bb793ae230);
+            
+        
+
+        marker_33afceeca04236388859b20c2846afed.bindPopup(popup_35d8a6424ded97eb1b7c5d89af8b9e9e)
+        ;
+
+        
+    
+    
+            var marker_57ddd41b19c8bcaf0710e996fd3f3808 = L.marker(
+                [40.63565174839789, -73.91324310355782],
+                {}
+            ).addTo(feature_group_e170cdf8736918eee8f59f6fc9171025);
+        
+    
+            var icon_3b908ab97f38b72bf5b81b7642b7b4e5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_57ddd41b19c8bcaf0710e996fd3f3808.setIcon(icon_3b908ab97f38b72bf5b81b7642b7b4e5);
+        
+    
+        var popup_0b36b31a176fb8cec42e0462e651e5bf = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_587b5e4bfbe8e7634919e8dda738872f = $(`<div id="html_587b5e4bfbe8e7634919e8dda738872f" style="width: 100.0%; height: 100.0%;">Shuttle: GP5<br>Stop: Flatland and E 80 ST</div>`)[0];
+                popup_0b36b31a176fb8cec42e0462e651e5bf.setContent(html_587b5e4bfbe8e7634919e8dda738872f);
+            
+        
+
+        marker_57ddd41b19c8bcaf0710e996fd3f3808.bindPopup(popup_0b36b31a176fb8cec42e0462e651e5bf)
+        ;
+
+        
+    
+    
+            var marker_69c5c83d2e9aae6f9f801111c545af64 = L.marker(
+                [40.63064104932749, -73.92821269006564],
+                {}
+            ).addTo(feature_group_e170cdf8736918eee8f59f6fc9171025);
+        
+    
+            var icon_840020fb46019eb43a2c2cd4f249509f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_69c5c83d2e9aae6f9f801111c545af64.setIcon(icon_840020fb46019eb43a2c2cd4f249509f);
+        
+    
+        var popup_2918c7b6d4baa6a20e96d14d6395719c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d5e3b397d5675d3890c5b6c1be379932 = $(`<div id="html_d5e3b397d5675d3890c5b6c1be379932" style="width: 100.0%; height: 100.0%;">Shuttle: GP5<br>Stop: Utica Ave and Ave I</div>`)[0];
+                popup_2918c7b6d4baa6a20e96d14d6395719c.setContent(html_d5e3b397d5675d3890c5b6c1be379932);
+            
+        
+
+        marker_69c5c83d2e9aae6f9f801111c545af64.bindPopup(popup_2918c7b6d4baa6a20e96d14d6395719c)
+        ;
+
+        
+    
+    
+            var marker_7a9c0fd37dbfdfe4c3ab757da06a17ad = L.marker(
+                [40.644573562818955, -73.92976163424416],
+                {}
+            ).addTo(feature_group_e170cdf8736918eee8f59f6fc9171025);
+        
+    
+            var icon_0bf51fd097484266ef589b2f41a6c08a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_7a9c0fd37dbfdfe4c3ab757da06a17ad.setIcon(icon_0bf51fd097484266ef589b2f41a6c08a);
+        
+    
+        var popup_5b9d958229d8bdeb1e6b323151de430b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_5ecba74fae2fcb6f97a77b06e97f0b7b = $(`<div id="html_5ecba74fae2fcb6f97a77b06e97f0b7b" style="width: 100.0%; height: 100.0%;">Shuttle: GP5<br>Stop: Utica Ave and Clarendon Ave</div>`)[0];
+                popup_5b9d958229d8bdeb1e6b323151de430b.setContent(html_5ecba74fae2fcb6f97a77b06e97f0b7b);
+            
+        
+
+        marker_7a9c0fd37dbfdfe4c3ab757da06a17ad.bindPopup(popup_5b9d958229d8bdeb1e6b323151de430b)
+        ;
+
+        
+    
+    
+            var poly_line_9cc91c463708c251a06b968e5d286d16 = L.polyline(
+                [[40.59416745459707, -73.98071306123171], [40.60210583428198, -73.99382670355959], [40.61231509738669, -73.98323233239489], [40.61929570274933, -73.99023754773792], [40.63538973267879, -74.01703337472193], [40.72896307317551, -73.94068983423975]],
+                {"bubblingMouseEvents": true, "color": "cyan", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "cyan", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(feature_group_e170cdf8736918eee8f59f6fc9171025);
+        
+    
+            poly_line_9cc91c463708c251a06b968e5d286d16.bindTooltip(
+                `<div>
+                     GP6
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e233afdf503ca4d0b0176dd061728ac8 = L.marker(
+                [40.59416745459707, -73.98071306123171],
+                {}
+            ).addTo(feature_group_e170cdf8736918eee8f59f6fc9171025);
+        
+    
+            var icon_5daa0932414abc4b854c6a13922e73e2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_e233afdf503ca4d0b0176dd061728ac8.setIcon(icon_5daa0932414abc4b854c6a13922e73e2);
+        
+    
+        var popup_c4f7e535f6d808391644725d0a44acf6 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_6459c2a4dba85f6f4ac4669afaa64d0d = $(`<div id="html_6459c2a4dba85f6f4ac4669afaa64d0d" style="width: 100.0%; height: 100.0%;">Shuttle: GP6<br>Stop: Ave V and 86 ST</div>`)[0];
+                popup_c4f7e535f6d808391644725d0a44acf6.setContent(html_6459c2a4dba85f6f4ac4669afaa64d0d);
+            
+        
+
+        marker_e233afdf503ca4d0b0176dd061728ac8.bindPopup(popup_c4f7e535f6d808391644725d0a44acf6)
+        ;
+
+        
+    
+    
+            var marker_29c668e18e37d731e0b921cf54ecc30f = L.marker(
+                [40.60210583428198, -73.99382670355959],
+                {}
+            ).addTo(feature_group_e170cdf8736918eee8f59f6fc9171025);
+        
+    
+            var icon_e36ebcb469d8960ecf40bb3c3438d568 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_29c668e18e37d731e0b921cf54ecc30f.setIcon(icon_e36ebcb469d8960ecf40bb3c3438d568);
+        
+    
+        var popup_864f1e6437bf5b8c486d933dd3cece91 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_501db5b7087602ec3cd17ed408fe815a = $(`<div id="html_501db5b7087602ec3cd17ed408fe815a" style="width: 100.0%; height: 100.0%;">Shuttle: GP6<br>Stop: Bay Pkwy and 86 St</div>`)[0];
+                popup_864f1e6437bf5b8c486d933dd3cece91.setContent(html_501db5b7087602ec3cd17ed408fe815a);
+            
+        
+
+        marker_29c668e18e37d731e0b921cf54ecc30f.bindPopup(popup_864f1e6437bf5b8c486d933dd3cece91)
+        ;
+
+        
+    
+    
+            var marker_ead409e7eb1cc571cde1f8daf12ab971 = L.marker(
+                [40.61231509738669, -73.98323233239489],
+                {}
+            ).addTo(feature_group_e170cdf8736918eee8f59f6fc9171025);
+        
+    
+            var icon_920e63b0af85da4ecf5165e6f1feeb73 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_ead409e7eb1cc571cde1f8daf12ab971.setIcon(icon_920e63b0af85da4ecf5165e6f1feeb73);
+        
+    
+        var popup_2f2a2bcd8413ba4a53b971eba303c3ee = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_e96044b6be2da4043633fe9bcdcde8e0 = $(`<div id="html_e96044b6be2da4043633fe9bcdcde8e0" style="width: 100.0%; height: 100.0%;">Shuttle: GP6<br>Stop: Bay Pkwy and 68 St</div>`)[0];
+                popup_2f2a2bcd8413ba4a53b971eba303c3ee.setContent(html_e96044b6be2da4043633fe9bcdcde8e0);
+            
+        
+
+        marker_ead409e7eb1cc571cde1f8daf12ab971.bindPopup(popup_2f2a2bcd8413ba4a53b971eba303c3ee)
+        ;
+
+        
+    
+    
+            var marker_893c16745d77e392dc3ae71e34f570ab = L.marker(
+                [40.61929570274933, -73.99023754773792],
+                {}
+            ).addTo(feature_group_e170cdf8736918eee8f59f6fc9171025);
+        
+    
+            var icon_48e05c4edb34f336d6917c539cef9467 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_893c16745d77e392dc3ae71e34f570ab.setIcon(icon_48e05c4edb34f336d6917c539cef9467);
+        
+    
+        var popup_951eb04a6c9cb81305effb095e664b61 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_2beb13e730ad30e8d78358ff1ea7bd57 = $(`<div id="html_2beb13e730ad30e8d78358ff1ea7bd57" style="width: 100.0%; height: 100.0%;">Shuttle: GP6<br>Stop: 65 St and 18 Ave</div>`)[0];
+                popup_951eb04a6c9cb81305effb095e664b61.setContent(html_2beb13e730ad30e8d78358ff1ea7bd57);
+            
+        
+
+        marker_893c16745d77e392dc3ae71e34f570ab.bindPopup(popup_951eb04a6c9cb81305effb095e664b61)
+        ;
+
+        
+    
+    
+            var marker_c37a419c94947a9188fd89470d8bb31d = L.marker(
+                [40.63538973267879, -74.01703337472193],
+                {}
+            ).addTo(feature_group_e170cdf8736918eee8f59f6fc9171025);
+        
+    
+            var icon_3788724ccb74741bccd6d662d0b41099 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_c37a419c94947a9188fd89470d8bb31d.setIcon(icon_3788724ccb74741bccd6d662d0b41099);
+        
+    
+        var popup_bfdb93f5b6f84c98c77397315f3bc1d9 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a6dfeea421a9b96f310f292b2eb92329 = $(`<div id="html_a6dfeea421a9b96f310f292b2eb92329" style="width: 100.0%; height: 100.0%;">Shuttle: GP6<br>Stop: 65 St and 6 Ave</div>`)[0];
+                popup_bfdb93f5b6f84c98c77397315f3bc1d9.setContent(html_a6dfeea421a9b96f310f292b2eb92329);
+            
+        
+
+        marker_c37a419c94947a9188fd89470d8bb31d.bindPopup(popup_bfdb93f5b6f84c98c77397315f3bc1d9)
+        ;
+
+        
+    
+    
+            var poly_line_263ef9a4ebfd802b7db20cd06b7f545e = L.polyline(
+                [[40.64383918665475, -73.90076570355738], [40.72896307317551, -73.94068983423975]],
+                {"bubblingMouseEvents": true, "color": "magenta", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "magenta", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(feature_group_e170cdf8736918eee8f59f6fc9171025);
+        
+    
+            poly_line_263ef9a4ebfd802b7db20cd06b7f545e.bindTooltip(
+                `<div>
+                     GP7
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_1d40f816081bc5fc8ff43823d32aa1f3 = L.marker(
+                [40.64383918665475, -73.90076570355738],
+                {}
+            ).addTo(feature_group_e170cdf8736918eee8f59f6fc9171025);
+        
+    
+            var icon_b1bd28ef4f52e7ab3914262596b2c72a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_1d40f816081bc5fc8ff43823d32aa1f3.setIcon(icon_b1bd28ef4f52e7ab3914262596b2c72a);
+        
+    
+        var popup_3f36c2a1fb0a635b3690f2862faabc97 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_e3993cc11292bea8f39ea255b234abf3 = $(`<div id="html_e3993cc11292bea8f39ea255b234abf3" style="width: 100.0%; height: 100.0%;">Shuttle: GP7<br>Stop: Rockaway Parkway and Flatland Ave</div>`)[0];
+                popup_3f36c2a1fb0a635b3690f2862faabc97.setContent(html_e3993cc11292bea8f39ea255b234abf3);
+            
+        
+
+        marker_1d40f816081bc5fc8ff43823d32aa1f3.bindPopup(popup_3f36c2a1fb0a635b3690f2862faabc97)
+        ;
+
+        
+    
+    
+            var poly_line_abf6486b9c594bc67ece6d166e43f54b = L.polyline(
+                [[40.62371414928895, -73.92737730355847], [40.651925386289506, -73.93044000355688], [40.67946920898293, -73.92902881704799], [40.72896307317551, -73.94068983423975]],
+                {"bubblingMouseEvents": true, "color": "navy", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "navy", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(feature_group_e170cdf8736918eee8f59f6fc9171025);
+        
+    
+            poly_line_abf6486b9c594bc67ece6d166e43f54b.bindTooltip(
+                `<div>
+                     GP8
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_691a3f530fc9a34d305754b15883d1fa = L.marker(
+                [40.62371414928895, -73.92737730355847],
+                {}
+            ).addTo(feature_group_e170cdf8736918eee8f59f6fc9171025);
+        
+    
+            var icon_11ee787442bf8f3de4b4fc4dcfa78fd7 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_691a3f530fc9a34d305754b15883d1fa.setIcon(icon_11ee787442bf8f3de4b4fc4dcfa78fd7);
+        
+    
+        var popup_f4c8ef25602a57a8d48863ed025de73a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_1dc8487f2baa31bcc88ab4e53d5daf77 = $(`<div id="html_1dc8487f2baa31bcc88ab4e53d5daf77" style="width: 100.0%; height: 100.0%;">Shuttle: GP8<br>Stop: Utica and avenue L</div>`)[0];
+                popup_f4c8ef25602a57a8d48863ed025de73a.setContent(html_1dc8487f2baa31bcc88ab4e53d5daf77);
+            
+        
+
+        marker_691a3f530fc9a34d305754b15883d1fa.bindPopup(popup_f4c8ef25602a57a8d48863ed025de73a)
+        ;
+
+        
+    
+    
+            var marker_bfa0a87f2591ef4d6abbda704142ed53 = L.marker(
+                [40.651925386289506, -73.93044000355688],
+                {}
+            ).addTo(feature_group_e170cdf8736918eee8f59f6fc9171025);
+        
+    
+            var icon_e0b59403035556a2efc03d0cacca1671 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_bfa0a87f2591ef4d6abbda704142ed53.setIcon(icon_e0b59403035556a2efc03d0cacca1671);
+        
+    
+        var popup_be4d1a2043f65d56c7f8dda9c4f248c9 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b62b9e5b4859e7f931645ca2091b7348 = $(`<div id="html_b62b9e5b4859e7f931645ca2091b7348" style="width: 100.0%; height: 100.0%;">Shuttle: GP8<br>Stop: Utica and church avenue</div>`)[0];
+                popup_be4d1a2043f65d56c7f8dda9c4f248c9.setContent(html_b62b9e5b4859e7f931645ca2091b7348);
+            
+        
+
+        marker_bfa0a87f2591ef4d6abbda704142ed53.bindPopup(popup_be4d1a2043f65d56c7f8dda9c4f248c9)
+        ;
+
+        
+    
+    
+            var marker_6a6dd5ade2a8284691bc0c78b3ac4b5a = L.marker(
+                [40.67946920898293, -73.92902881704799],
+                {}
+            ).addTo(feature_group_e170cdf8736918eee8f59f6fc9171025);
+        
+    
+            var icon_d3bec2a947f025f4066630dd0d1d535c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_6a6dd5ade2a8284691bc0c78b3ac4b5a.setIcon(icon_d3bec2a947f025f4066630dd0d1d535c);
+        
+    
+        var popup_cf90162889b0a0d864fdb3ea6446a460 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_69ae8e48ab24612aaaab48316ccff422 = $(`<div id="html_69ae8e48ab24612aaaab48316ccff422" style="width: 100.0%; height: 100.0%;">Shuttle: GP8<br>Stop: Utica and Fulton avenue</div>`)[0];
+                popup_cf90162889b0a0d864fdb3ea6446a460.setContent(html_69ae8e48ab24612aaaab48316ccff422);
+            
+        
+
+        marker_6a6dd5ade2a8284691bc0c78b3ac4b5a.bindPopup(popup_cf90162889b0a0d864fdb3ea6446a460)
+        ;
+
+        
+    
+    
+            var poly_line_f5e7c5b5d573f17428d49a1f995d967d = L.polyline(
+                [[40.6205433586737, -73.91731173012896], [40.620849841764574, -73.92722852582823], [40.62154332801797, -73.92709998821523], [40.65188468744576, -73.93042927472104], [40.65846465097026, -73.9310453882132], [40.670749895968186, -73.93093704588426], [40.72896307317551, -73.94068983423975]],
+                {"bubblingMouseEvents": true, "color": "limegreen", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "limegreen", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(feature_group_e170cdf8736918eee8f59f6fc9171025);
+        
+    
+            poly_line_f5e7c5b5d573f17428d49a1f995d967d.bindTooltip(
+                `<div>
+                     GP9
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_f5e7db0f048d4ded4e5c18b556fa6c00 = L.marker(
+                [40.6205433586737, -73.91731173012896],
+                {}
+            ).addTo(feature_group_e170cdf8736918eee8f59f6fc9171025);
+        
+    
+            var icon_596c7a1c81a0b2299201ccb0095564c2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_f5e7db0f048d4ded4e5c18b556fa6c00.setIcon(icon_596c7a1c81a0b2299201ccb0095564c2);
+        
+    
+        var popup_95d72af60697820812ec56271b830308 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_55c359b42ab7862641b0fd3cb4fa5bce = $(`<div id="html_55c359b42ab7862641b0fd3cb4fa5bce" style="width: 100.0%; height: 100.0%;">Shuttle: GP9<br>Stop: Ave N and Ralph Ave</div>`)[0];
+                popup_95d72af60697820812ec56271b830308.setContent(html_55c359b42ab7862641b0fd3cb4fa5bce);
+            
+        
+
+        marker_f5e7db0f048d4ded4e5c18b556fa6c00.bindPopup(popup_95d72af60697820812ec56271b830308)
+        ;
+
+        
+    
+    
+            var marker_b8378861f761e4367d0e59f813a91527 = L.marker(
+                [40.620849841764574, -73.92722852582823],
+                {}
+            ).addTo(feature_group_e170cdf8736918eee8f59f6fc9171025);
+        
+    
+            var icon_002b326d64718466cedad892ed9d58c1 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_b8378861f761e4367d0e59f813a91527.setIcon(icon_002b326d64718466cedad892ed9d58c1);
+        
+    
+        var popup_655baa1b0ffac7ce7042260f07becccd = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_7b12dbeee6f9d63dd44ed413576c8a7a = $(`<div id="html_7b12dbeee6f9d63dd44ed413576c8a7a" style="width: 100.0%; height: 100.0%;">Shuttle: GP9<br>Stop: Ave N and utica Ave </div>`)[0];
+                popup_655baa1b0ffac7ce7042260f07becccd.setContent(html_7b12dbeee6f9d63dd44ed413576c8a7a);
+            
+        
+
+        marker_b8378861f761e4367d0e59f813a91527.bindPopup(popup_655baa1b0ffac7ce7042260f07becccd)
+        ;
+
+        
+    
+    
+            var marker_af509a7438e0601da1dec3f8a655e8e6 = L.marker(
+                [40.62154332801797, -73.92709998821523],
+                {}
+            ).addTo(feature_group_e170cdf8736918eee8f59f6fc9171025);
+        
+    
+            var icon_07969ae51eaf3590d0123a5c26bd183e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_af509a7438e0601da1dec3f8a655e8e6.setIcon(icon_07969ae51eaf3590d0123a5c26bd183e);
+        
+    
+        var popup_e2f588f06845e7e96a3cd422e9db8124 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_43051c333a0c65ee9076d1433a5d6590 = $(`<div id="html_43051c333a0c65ee9076d1433a5d6590" style="width: 100.0%; height: 100.0%;">Shuttle: GP9<br>Stop: Ave M and Utica Ave</div>`)[0];
+                popup_e2f588f06845e7e96a3cd422e9db8124.setContent(html_43051c333a0c65ee9076d1433a5d6590);
+            
+        
+
+        marker_af509a7438e0601da1dec3f8a655e8e6.bindPopup(popup_e2f588f06845e7e96a3cd422e9db8124)
+        ;
+
+        
+    
+    
+            var marker_7b5fab8dceb871e2c21351ee04b1f28c = L.marker(
+                [40.65188468744576, -73.93042927472104],
+                {}
+            ).addTo(feature_group_e170cdf8736918eee8f59f6fc9171025);
+        
+    
+            var icon_619086866bb80ef441705a0c663c7c67 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_7b5fab8dceb871e2c21351ee04b1f28c.setIcon(icon_619086866bb80ef441705a0c663c7c67);
+        
+    
+        var popup_c491297542baee82cb1f44c82bb33ca8 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_4dd573c10977934b7ce3d0da872154d1 = $(`<div id="html_4dd573c10977934b7ce3d0da872154d1" style="width: 100.0%; height: 100.0%;">Shuttle: GP9<br>Stop: Church Ave and Utica Ave</div>`)[0];
+                popup_c491297542baee82cb1f44c82bb33ca8.setContent(html_4dd573c10977934b7ce3d0da872154d1);
+            
+        
+
+        marker_7b5fab8dceb871e2c21351ee04b1f28c.bindPopup(popup_c491297542baee82cb1f44c82bb33ca8)
+        ;
+
+        
+    
+    
+            var marker_7d228a6432f61de901328e1b1cc5c479 = L.marker(
+                [40.65846465097026, -73.9310453882132],
+                {}
+            ).addTo(feature_group_e170cdf8736918eee8f59f6fc9171025);
+        
+    
+            var icon_ff58a8ff20abc9f49a26df5c58ac6956 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_7d228a6432f61de901328e1b1cc5c479.setIcon(icon_ff58a8ff20abc9f49a26df5c58ac6956);
+        
+    
+        var popup_f8f879aa3270c6076a42d4bf8518c060 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_2751010fb36632feaec247e1852862d6 = $(`<div id="html_2751010fb36632feaec247e1852862d6" style="width: 100.0%; height: 100.0%;">Shuttle: GP9<br>Stop: Winthrop and Utica</div>`)[0];
+                popup_f8f879aa3270c6076a42d4bf8518c060.setContent(html_2751010fb36632feaec247e1852862d6);
+            
+        
+
+        marker_7d228a6432f61de901328e1b1cc5c479.bindPopup(popup_f8f879aa3270c6076a42d4bf8518c060)
+        ;
+
+        
+    
+    
+            var marker_57accb9f0e69da1ac74de8c007879d21 = L.marker(
+                [40.670749895968186, -73.93093704588426],
+                {}
+            ).addTo(feature_group_e170cdf8736918eee8f59f6fc9171025);
+        
+    
+            var icon_b02e09a6fdbb5db3d177fad754f89ef2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_57accb9f0e69da1ac74de8c007879d21.setIcon(icon_b02e09a6fdbb5db3d177fad754f89ef2);
+        
+    
+        var popup_13a3966857b5057da8b4de82b8b83d9c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_9d0645196a2b3aaf07acb71430c3ff21 = $(`<div id="html_9d0645196a2b3aaf07acb71430c3ff21" style="width: 100.0%; height: 100.0%;">Shuttle: GP9<br>Stop: Utica and ST john PL</div>`)[0];
+                popup_13a3966857b5057da8b4de82b8b83d9c.setContent(html_9d0645196a2b3aaf07acb71430c3ff21);
+            
+        
+
+        marker_57accb9f0e69da1ac74de8c007879d21.bindPopup(popup_13a3966857b5057da8b4de82b8b83d9c)
+        ;
+
+        
+    
+    
+            feature_group_e170cdf8736918eee8f59f6fc9171025.addTo(map_fc1eda446452a20a9dc77060d7de5b18);
+        
+    
+            var layer_control_d335ccad3ab7ca641e6a2249ea9462da_layers = {
+                base_layers : {
+                },
+                overlays :  {
+                    "Routes to Conners" : feature_group_6fdcbaa3c086ac5782e2081294781afa,
+                    "Routes to Jamaica" : feature_group_93c6038c9104357fb39556e2120ea941,
+                    "Routes to Richmond Terrace" : feature_group_8d5a664cf0676207f58e10fbe2ebd48e,
+                    "Routes to Greenpoint" : feature_group_e170cdf8736918eee8f59f6fc9171025,
+                },
+            };
+            let layer_control_d335ccad3ab7ca641e6a2249ea9462da = L.control.layers(
+                layer_control_d335ccad3ab7ca641e6a2249ea9462da_layers.base_layers,
+                layer_control_d335ccad3ab7ca641e6a2249ea9462da_layers.overlays,
+                {"autoZIndex": true, "collapsed": true, "position": "topright"}
+            ).addTo(map_fc1eda446452a20a9dc77060d7de5b18);
+
+        
+</script>
+</html>
